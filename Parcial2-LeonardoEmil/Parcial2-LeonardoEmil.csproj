@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="BLL\IRepository.cs" />
     <Compile Include="BLL\RepositorioBase.cs" />
+    <Compile Include="DAL\Contexto.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,7 +91,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DAL\" />
     <Folder Include="Entidades\" />
     <Folder Include="UI\" />
   </ItemGroup>
