@@ -57,6 +57,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BLL\AsignaturasTest.cs" />
+    <Compile Include="BLL\EstudiantesTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
