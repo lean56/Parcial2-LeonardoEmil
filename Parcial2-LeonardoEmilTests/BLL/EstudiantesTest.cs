@@ -12,8 +12,6 @@ namespace Parcial2_LeonardoEmil.BLL.Tests
     [TestClass()]
     public class EstudiantesTest
     {
-
-
         [TestMethod()]
         public void GuardarTest()
         {
