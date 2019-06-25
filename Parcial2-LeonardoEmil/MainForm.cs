@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Parcial2_LeonardoEmil.UI.Registro;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace Parcial2_LeonardoEmil
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void registroEstudiantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rEstudiantes re = new rEstudiantes();
+            re.Show();
         }
     }
 }
