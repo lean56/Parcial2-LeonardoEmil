@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Parcial2_LeonardoEmil.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace Parcial2_LeonardoEmil.DAL
 {
    public class Contexto : DbContext
     {
-        public DbSet<Asignatura>asignatura { get; set; }
+        public DbSet<Asignaturas>asignatura { get; set; }
         public DbSet<Estudiante>estudiante { get; set; }
         public DbSet<Inscripcion>inscripcion { get; set; }
 
