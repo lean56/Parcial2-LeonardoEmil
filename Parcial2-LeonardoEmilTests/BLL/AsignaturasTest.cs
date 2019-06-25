@@ -7,7 +7,6 @@ namespace Parcial2_LeonardoEmil.BLL.Tests
     public class AsignaturasTest
     {
     
-
         [TestMethod()]
         public void GuardarTest()
         {
@@ -21,6 +20,23 @@ namespace Parcial2_LeonardoEmil.BLL.Tests
             };
 
             Assert.IsTrue(db.Guardar(asignatura));
+        }
+
+        [TestMethod()]
+        public void GuardarConDetalleTest()
+        {
+
+            RepositorioBase<InscripcionDetalle> db = new RepositorioBase<InscripcionDetalle>();
+
+            InscripcionDetalle detalle = new InscripcionDetalle()
+            {
+                InscripcionDetalleId = 1,
+                InscripcionId = 1,
+                EstudianteId = 1,
+                Monto = 1000
+        };
+            
+
         }
 
         [TestMethod()]

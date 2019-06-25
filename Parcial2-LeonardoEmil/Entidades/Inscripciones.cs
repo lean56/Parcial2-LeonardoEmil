@@ -14,14 +14,14 @@ namespace Parcial2_LeonardoEmil.Entidades
         public DateTime Fecha { get; set; }
         public decimal Monto { get; set; }
 
-        public virtual List<InscripcionesDetalle> Detalles { get; set; }
+        public virtual List<InscripcionDetalle> Detalle { get; set; }
 
-        public Inscripciones(int inscripcionId, DateTime fecha, decimal monto, List<InscripcionesDetalle> detalles)
+        public Inscripciones(int inscripcionId, DateTime fecha, decimal monto, List<InscripcionDetalle> detalle)
         {
             InscripcionId = inscripcionId;
             Fecha = fecha;
             Monto = monto;
-            Detalles = detalles;
+            this.Detalle = detalle;
         }
 
         public Inscripciones()
@@ -29,7 +29,7 @@ namespace Parcial2_LeonardoEmil.Entidades
             InscripcionId = 0;
             Fecha = DateTime.Now;
             Monto = 0;
-            this.Detalles = new List<InscripcionesDetalle>();
+            this.Detalle = new List<InscripcionDetalle>();
         }
     }
 }

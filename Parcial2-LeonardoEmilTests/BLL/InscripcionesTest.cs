@@ -27,6 +27,8 @@ namespace Parcial2_LeonardoEmil.BLL.Tests
             Assert.IsTrue(db.Guardar(inscripcion));
         }
 
+
+
         [TestMethod()]
         public void ModificarTest()
         {
