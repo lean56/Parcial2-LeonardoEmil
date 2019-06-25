@@ -1,10 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Parcial2_LeonardoEmil.BLL;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Parcial2_LeonardoEmil.Entidades;
 
 namespace Parcial2_LeonardoEmil.BLL.Tests
 {
@@ -16,31 +11,55 @@ namespace Parcial2_LeonardoEmil.BLL.Tests
         [TestMethod()]
         public void GuardarTest()
         {
-            Assert.Fail();
+            RepositorioBase<Asignaturas> db = new RepositorioBase<Asignaturas>();
+
+            Asignaturas asignatura = new Asignaturas()
+            {
+                AsignaturaId = 1,
+                Descripcion = "Prueba 1",
+                Creditos = 2
+            };
+
+            Assert.IsTrue(db.Guardar(asignatura));
         }
 
         [TestMethod()]
         public void ModificarTest()
         {
-            Assert.Fail();
+            RepositorioBase<Asignaturas> db = new RepositorioBase<Asignaturas>();
+
+            Asignaturas asignatura = new Asignaturas()
+            {
+                AsignaturaId = 1,
+                Descripcion = "Programacion Aplicada",
+                Creditos = 3
+            };
+
+            Assert.IsTrue(db.Modificar(asignatura));
         }
 
         [TestMethod()]
         public void EliminarTest()
         {
-            Assert.Fail();
+            RepositorioBase<Asignaturas> db = new RepositorioBase<Asignaturas>();
+
+            Assert.IsTrue(db.Eliminar(1));
         }
 
         [TestMethod()]
         public void BuscarTest()
         {
-            Assert.Fail();
+            RepositorioBase<Asignaturas> db = new RepositorioBase<Asignaturas>();
+
+            Assert.IsNotNull(db.Buscar(1));
         }
 
         [TestMethod()]
         public void GetListTest()
         {
-            Assert.Fail();
+            RepositorioBase<Asignaturas> db = new RepositorioBase<Asignaturas>();
+
+            Assert.IsNotNull(db.GetList(t => true));
         }
 
      
