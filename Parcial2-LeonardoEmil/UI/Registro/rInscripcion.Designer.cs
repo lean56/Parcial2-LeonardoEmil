@@ -54,12 +54,17 @@
             this.NombretextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.BuscarEstbutton = new System.Windows.Forms.Button();
+            this.IdAsignumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.BuscarAsignbutton = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.DecripciontextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MontonumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IdEstudiantenumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IdAsignumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -74,7 +79,7 @@
             // FechadateTimePicker
             // 
             this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FechadateTimePicker.Location = new System.Drawing.Point(80, 223);
+            this.FechadateTimePicker.Location = new System.Drawing.Point(80, 117);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
             this.FechadateTimePicker.Size = new System.Drawing.Size(101, 20);
             this.FechadateTimePicker.TabIndex = 1;
@@ -89,7 +94,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 197);
+            this.label2.Location = new System.Drawing.Point(85, 368);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 3;
@@ -98,7 +103,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 230);
+            this.label3.Location = new System.Drawing.Point(12, 124);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 4;
@@ -116,11 +121,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 128);
+            this.label5.Location = new System.Drawing.Point(11, 249);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 13);
+            this.label5.Size = new System.Drawing.Size(31, 13);
             this.label5.TabIndex = 6;
-            this.label5.Text = "Asignatura";
+            this.label5.Text = "ID_A";
             // 
             // EstudiantecomboBox
             // 
@@ -137,14 +142,14 @@
             this.AsignaturacomboBox.BackColor = System.Drawing.SystemColors.Window;
             this.AsignaturacomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AsignaturacomboBox.FormattingEnabled = true;
-            this.AsignaturacomboBox.Location = new System.Drawing.Point(79, 128);
+            this.AsignaturacomboBox.Location = new System.Drawing.Point(76, 193);
             this.AsignaturacomboBox.Name = "AsignaturacomboBox";
             this.AsignaturacomboBox.Size = new System.Drawing.Size(121, 21);
             this.AsignaturacomboBox.TabIndex = 8;
             // 
             // MontonumericUpDown
             // 
-            this.MontonumericUpDown.Location = new System.Drawing.Point(81, 197);
+            this.MontonumericUpDown.Location = new System.Drawing.Point(154, 368);
             this.MontonumericUpDown.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -168,7 +173,7 @@
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.Location = new System.Drawing.Point(15, 358);
+            this.Nuevobutton.Location = new System.Drawing.Point(16, 394);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 23);
             this.Nuevobutton.TabIndex = 11;
@@ -178,7 +183,7 @@
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(105, 358);
+            this.Guardarbutton.Location = new System.Drawing.Point(106, 394);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 23);
             this.Guardarbutton.TabIndex = 12;
@@ -188,7 +193,7 @@
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Location = new System.Drawing.Point(198, 358);
+            this.Eliminarbutton.Location = new System.Drawing.Point(199, 394);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(75, 23);
             this.Eliminarbutton.TabIndex = 13;
@@ -215,7 +220,7 @@
             // 
             this.addAsignatura.AutoSize = true;
             this.addAsignatura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addAsignatura.Location = new System.Drawing.Point(205, 129);
+            this.addAsignatura.Location = new System.Drawing.Point(202, 194);
             this.addAsignatura.Name = "addAsignatura";
             this.addAsignatura.Size = new System.Drawing.Size(18, 20);
             this.addAsignatura.TabIndex = 15;
@@ -225,7 +230,7 @@
             // DetalledataGridView
             // 
             this.DetalledataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DetalledataGridView.Location = new System.Drawing.Point(21, 249);
+            this.DetalledataGridView.Location = new System.Drawing.Point(17, 284);
             this.DetalledataGridView.Name = "DetalledataGridView";
             this.DetalledataGridView.Size = new System.Drawing.Size(203, 70);
             this.DetalledataGridView.TabIndex = 16;
@@ -234,7 +239,7 @@
             // 
             this.detalleButton.AutoSize = true;
             this.detalleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detalleButton.Location = new System.Drawing.Point(206, 226);
+            this.detalleButton.Location = new System.Drawing.Point(303, 284);
             this.detalleButton.Name = "detalleButton";
             this.detalleButton.Size = new System.Drawing.Size(18, 20);
             this.detalleButton.TabIndex = 17;
@@ -244,7 +249,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 171);
+            this.label6.Location = new System.Drawing.Point(11, 160);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 18;
@@ -252,7 +257,7 @@
             // 
             // PrecionumericUpDown
             // 
-            this.PrecionumericUpDown.Location = new System.Drawing.Point(80, 169);
+            this.PrecionumericUpDown.Location = new System.Drawing.Point(79, 158);
             this.PrecionumericUpDown.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -296,11 +301,53 @@
             this.BuscarEstbutton.UseVisualStyleBackColor = true;
             this.BuscarEstbutton.Click += new System.EventHandler(this.BuscarEstbutton_Click);
             // 
+            // IdAsignumericUpDown
+            // 
+            this.IdAsignumericUpDown.Location = new System.Drawing.Point(48, 246);
+            this.IdAsignumericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.IdAsignumericUpDown.Name = "IdAsignumericUpDown";
+            this.IdAsignumericUpDown.Size = new System.Drawing.Size(64, 20);
+            this.IdAsignumericUpDown.TabIndex = 24;
+            // 
+            // BuscarAsignbutton
+            // 
+            this.BuscarAsignbutton.Location = new System.Drawing.Point(118, 244);
+            this.BuscarAsignbutton.Name = "BuscarAsignbutton";
+            this.BuscarAsignbutton.Size = new System.Drawing.Size(43, 23);
+            this.BuscarAsignbutton.TabIndex = 25;
+            this.BuscarAsignbutton.Text = "Buscar";
+            this.BuscarAsignbutton.UseVisualStyleBackColor = true;
+            this.BuscarAsignbutton.Click += new System.EventHandler(this.BuscarAsignbutton_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(167, 249);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(63, 13);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "Descripcion";
+            // 
+            // DecripciontextBox
+            // 
+            this.DecripciontextBox.Location = new System.Drawing.Point(240, 245);
+            this.DecripciontextBox.Name = "DecripciontextBox";
+            this.DecripciontextBox.Size = new System.Drawing.Size(100, 20);
+            this.DecripciontextBox.TabIndex = 26;
+            // 
             // rInscripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(346, 412);
+            this.ClientSize = new System.Drawing.Size(346, 439);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.DecripciontextBox);
+            this.Controls.Add(this.BuscarAsignbutton);
+            this.Controls.Add(this.IdAsignumericUpDown);
             this.Controls.Add(this.BuscarEstbutton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.NombretextBox);
@@ -333,6 +380,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IdEstudiantenumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IdAsignumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,5 +413,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox NombretextBox;
         private System.Windows.Forms.NumericUpDown IdEstudiantenumericUpDown;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox DecripciontextBox;
+        private System.Windows.Forms.Button BuscarAsignbutton;
+        private System.Windows.Forms.NumericUpDown IdAsignumericUpDown;
     }
 }

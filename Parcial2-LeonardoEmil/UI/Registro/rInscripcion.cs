@@ -258,6 +258,12 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             NombretextBox.Text = estudiante.Nombres;
         }
 
+        private void LlenarAsignatura(Asignaturas asignatura)
+        {
+            IdAsignumericUpDown.Value = asignatura.AsignaturaId;
+            DecripciontextBox.Text = asignatura.Descripcion;
+        }
+
         private void MontonumericUpDown_ValueChanged(object sender, EventArgs e)
         {
             RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
@@ -295,6 +301,25 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             }
             else
                 ErrorProvider.SetError(IdnumericUpDown, "Estudiante  no encontrado");
+        }
+
+        private void BuscarAsignbutton_Click(object sender, EventArgs e)
+        {
+            RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
+
+            Asignaturas asignatura;
+
+            int.TryParse(IdAsignumericUpDown.Text, out int id);
+
+            asignatura = repositorio.Buscar(id);
+
+            if (asignatura != null)
+            {
+                ErrorProvider.Clear();
+                LlenarAsignatura(asignatura);
+            }
+            else
+                ErrorProvider.SetError(IdnumericUpDown, "Asignatura  no encontrada");
         }
     }
 }
