@@ -81,8 +81,8 @@ namespace Parcial2_LeonardoEmil.UI.Registro
                 inscripcion.Precio = PrecionumericUpDown.Value;
                 inscripcion.Monto = MontonumericUpDown.Value;
                 inscripcion.Detalle = this.detalle;
-                
-                
+
+
             }
             return inscripcion;
         }
@@ -108,6 +108,11 @@ namespace Parcial2_LeonardoEmil.UI.Registro
         private bool Validar()
         {
             bool paso = true;
+            if(PrecionumericUpDown.Value ==0)
+            {
+                ErrorProvider.SetError(PrecionumericUpDown, "Este campo no puede ser cero");
+                paso = false;
+            }
 
             if (MontonumericUpDown.Value == 0)
             {
@@ -134,9 +139,10 @@ namespace Parcial2_LeonardoEmil.UI.Registro
                 return;
 
             inscripcion = LlenaClase();
-
             if (IdnumericUpDown.Value == 0)
+            {
                 paso = repositorio.Guardar(inscripcion);
+            }
             else
             {
                 if(!ExisteEnLaBaseDeDatos())
@@ -216,8 +222,9 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             {
                 detalle = (List<InscripcionDetalle>)DetalledataGridView.DataSource;
             }
-            //if (DetalledataGridView.DataSource != null)
-            //  this.detalle = (List<InscripcionDetalle>)DetalledataGridView.DataSource;
+            if (DetalledataGridView.DataSource != null)
+              detalle = (List<InscripcionDetalle>)DetalledataGridView.DataSource;
+            RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
 
             this.detalle.Add(
           new InscripcionDetalle(
@@ -250,12 +257,18 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
             Asignaturas asignatura = new Asignaturas();
             // Asignaturas asignatura = new Asignaturas();
-            int id = 1;
-
+            int id = Convert.ToInt32(AsignaturacomboBox.SelectedValue);
+            
             asignatura = repositorio.Buscar(id);
+            if (id == 0)
+            {
+                MessageBox.Show("No hay asignatura registrada");
+                return;
+            }
+            else
+                asignatura = repositorio.Buscar(id);
             decimal credito = asignatura.Creditos;
             decimal precio = PrecionumericUpDown.Value;
-
             MontonumericUpDown.Value = (asignatura.Creditos * precio);
             // PrecionumericUpDown.Value;
         }
