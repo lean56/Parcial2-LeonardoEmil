@@ -24,6 +24,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             InitializeComponent();
             LlenarComboBoxEstudiante();
             LlenarComboBoxAsignaturas();
+            detalle = new List<InscripcionDetalle>();
         }
 
         public void LlenarComboBoxEstudiante()
@@ -62,6 +63,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             FechadateTimePicker.Value = DateTime.Now;
             PrecionumericUpDown.Value = 0;
             MontonumericUpDown.Value = 0;
+            detalle = new List<InscripcionDetalle>();
         }
 
         private void CargarGrid()
@@ -110,6 +112,12 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             if (MontonumericUpDown.Value == 0)
             {
                 ErrorProvider.SetError(MontonumericUpDown, "Este Campo No puede Ser Cero");
+                paso = false;
+            }
+
+            if(detalle.Count ==0)
+            {
+                ErrorProvider.SetError(DetalledataGridView, "El detalle no puede estar vacio...");
                 paso = false;
             }
             return paso;
