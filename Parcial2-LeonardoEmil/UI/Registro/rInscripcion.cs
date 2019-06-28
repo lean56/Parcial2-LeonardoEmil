@@ -22,34 +22,6 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             detalle = new List<InscripcionDetalle>();
         }
 
-        //public void LlenarComboBoxEstudiante()
-        //{
-        //    RepositorioBase<Estudiantes> repositorio = new RepositorioBase<Estudiantes>();
-        //    EstudiantecomboBox.DataSource = repositorio.GetList(x => true);
-        //    EstudiantecomboBox.DisplayMember = "Estudiantes";
-
-        //    EstudiantecomboBox.ValueMember = "EstudianteId";
-        //}
-
-        //public void LlenarMonto()
-        //{
-        //    RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
-        //    AsignaturacomboBox.DataSource = repositorio.GetList(x => true);
-        //    AsignaturacomboBox.DisplayMember = "Asignatura";
-
-        //    AsignaturacomboBox.ValueMember = "Costo";
-        //  //  MontonumericUpDown.Value = AsignaturacomboBox.SelectedIndex;
-        //}
-
-        //public void LlenarComboBoxAsignaturas()
-        //{
-        //    RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
-        //    AsignaturacomboBox.DataSource = repositorio.GetList(x => true);
-        //    AsignaturacomboBox.DisplayMember = "asignaturas";
-
-        //    AsignaturacomboBox.ValueMember = "AsignaturaId";
-        //}
-
         private void Limpiar()
         {
             IdnumericUpDown.Value = 0;
@@ -80,8 +52,6 @@ namespace Parcial2_LeonardoEmil.UI.Registro
                 inscripcion.Monto = MontonumericUpDown.Value;
                 
                 inscripcion.Detalle = this.detalle;
-
-
             }
             return inscripcion;
         }
@@ -160,8 +130,6 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             try
             {
                 estudiante = db.Buscar(id);
-
-
             }
             catch (Exception)
             {
@@ -179,8 +147,6 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             try
             {
                 asignatura = db.Buscar(id);
-
-
             }
             catch (Exception)
             {
