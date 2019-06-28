@@ -12,25 +12,18 @@ namespace Parcial2_LeonardoEmil.Entidades
         [Key]
         public int InscripcionId { get; set; }
         public int EstudianteId { get; set; }
+        public int AsignaturaId { get; set; }
         public DateTime Fecha { get; set; }
-        public decimal Precio { get; set; }
         public decimal Monto { get; set; }
 
         public virtual List<InscripcionDetalle> Detalle { get; set; }
 
-        public Inscripciones(int inscripcionId, DateTime fecha,int precio, decimal monto)
-        {
-            InscripcionId = inscripcionId;
-            Fecha = fecha;
-            Precio = precio;
-            Monto = monto;
-        }
-
         public Inscripciones()
         {
             InscripcionId = 0;
+            EstudianteId = 0;
+            AsignaturaId = 0;
             Fecha = DateTime.Now;
-            Precio = 0;
             Monto = 0;
             this.Detalle = new List<InscripcionDetalle>();
         }

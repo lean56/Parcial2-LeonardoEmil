@@ -14,7 +14,6 @@ namespace Parcial2_LeonardoEmil.UI.Registro
 {
     public partial class rAsignatura : Form
     {
-        RepositorioBase<Asignaturas> repositorio;
 
         public rAsignatura()
         {
@@ -49,7 +48,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
 
         private bool ExisteEnLaBaseDeDatos()
         {
-            repositorio = new RepositorioBase<Asignaturas>();
+          RepositorioBase<Asignaturas>  repositorio = new RepositorioBase<Asignaturas>();
             Asignaturas asignatura = repositorio.Buscar((int)IdnumericUpDown.Value);
             return (asignatura != null);
         }
@@ -78,7 +77,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            repositorio = new RepositorioBase<Asignaturas>();
+          RepositorioBase<Asignaturas>  repositorio = new RepositorioBase<Asignaturas>();
 
             Asignaturas asignatura;
             bool paso = false;
@@ -111,7 +110,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            repositorio = new RepositorioBase<Asignaturas>();
+           RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
             ErrorProvider.Clear();
 
             int.TryParse(IdnumericUpDown.Text, out int id);
@@ -130,7 +129,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            repositorio = new RepositorioBase<Asignaturas>();
+           RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
             Asignaturas asignatura = new Asignaturas();
 
             int.TryParse(IdnumericUpDown.Text, out int id);

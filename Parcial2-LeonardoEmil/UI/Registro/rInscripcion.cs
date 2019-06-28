@@ -14,52 +14,49 @@ namespace Parcial2_LeonardoEmil.UI.Registro
 {
     public partial class rInscripcion : Form
     {
-        RepositorioBase<Inscripciones> repositorio;
 
-        List<InscripcionDetalle> detalle = new List<InscripcionDetalle>();
-        public List<InscripcionDetalle> detalles { get; set; }
-
+        public List<InscripcionDetalle> detalle;
         public rInscripcion()
         {
             InitializeComponent();
-            LlenarComboBoxEstudiante();
-            LlenarComboBoxAsignaturas();
             detalle = new List<InscripcionDetalle>();
         }
 
-        public void LlenarComboBoxEstudiante()
-        {
-            RepositorioBase<Estudiantes> repositorio = new RepositorioBase<Estudiantes>();
-            EstudiantecomboBox.DataSource = repositorio.GetList(x => true);
-            EstudiantecomboBox.DisplayMember = "Estudiantes";
+        //public void LlenarComboBoxEstudiante()
+        //{
+        //    RepositorioBase<Estudiantes> repositorio = new RepositorioBase<Estudiantes>();
+        //    EstudiantecomboBox.DataSource = repositorio.GetList(x => true);
+        //    EstudiantecomboBox.DisplayMember = "Estudiantes";
 
-            EstudiantecomboBox.ValueMember = "EstudianteId";
-        }
+        //    EstudiantecomboBox.ValueMember = "EstudianteId";
+        //}
 
-        public void LlenarMonto()
-        {
-            RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
-            AsignaturacomboBox.DataSource = repositorio.GetList(x => true);
-            AsignaturacomboBox.DisplayMember = "Asignatura";
+        //public void LlenarMonto()
+        //{
+        //    RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
+        //    AsignaturacomboBox.DataSource = repositorio.GetList(x => true);
+        //    AsignaturacomboBox.DisplayMember = "Asignatura";
 
-            AsignaturacomboBox.ValueMember = "Costo";
-          //  MontonumericUpDown.Value = AsignaturacomboBox.SelectedIndex;
-        }
+        //    AsignaturacomboBox.ValueMember = "Costo";
+        //  //  MontonumericUpDown.Value = AsignaturacomboBox.SelectedIndex;
+        //}
 
-        public void LlenarComboBoxAsignaturas()
-        {
-            RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
-            AsignaturacomboBox.DataSource = repositorio.GetList(x => true);
-            AsignaturacomboBox.DisplayMember = "asignaturas";
+        //public void LlenarComboBoxAsignaturas()
+        //{
+        //    RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
+        //    AsignaturacomboBox.DataSource = repositorio.GetList(x => true);
+        //    AsignaturacomboBox.DisplayMember = "asignaturas";
 
-            AsignaturacomboBox.ValueMember = "AsignaturaId";
-        }
+        //    AsignaturacomboBox.ValueMember = "AsignaturaId";
+        //}
 
         private void Limpiar()
         {
             IdnumericUpDown.Value = 0;
-            EstudiantecomboBox.SelectedIndex = 0;
-            AsignaturacomboBox.SelectedIndex = 0;
+            IdEstudiantenumericUpDown.Value = 0;
+            NombretextBox.Text = string.Empty;
+            IdAsignumericUpDown.Value = 0;
+            DescripciontextBox.Text = string.Empty;
             FechadateTimePicker.Value = DateTime.Now;
             PrecionumericUpDown.Value = 0;
             MontonumericUpDown.Value = 0;
@@ -77,9 +74,11 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             Inscripciones inscripcion = new Inscripciones();
             {
                 inscripcion.InscripcionId = (int)IdnumericUpDown.Value;
+                inscripcion.EstudianteId = (int)IdEstudiantenumericUpDown.Value;
+                inscripcion.AsignaturaId = (int)IdAsignumericUpDown.Value;
                 inscripcion.Fecha = FechadateTimePicker.Value;
-                inscripcion.Precio = PrecionumericUpDown.Value;
                 inscripcion.Monto = MontonumericUpDown.Value;
+                
                 inscripcion.Detalle = this.detalle;
 
 
@@ -90,17 +89,19 @@ namespace Parcial2_LeonardoEmil.UI.Registro
         private void LlenaCampo(Inscripciones inscripcion)
         {
             IdnumericUpDown.Value = inscripcion.InscripcionId;
+            IdEstudiantenumericUpDown.Value = inscripcion.EstudianteId;
+            IdAsignumericUpDown.Value = inscripcion.AsignaturaId;
             FechadateTimePicker.Value = inscripcion.Fecha;
             MontonumericUpDown.Value = inscripcion.Monto;
-            PrecionumericUpDown.Value = inscripcion.Precio;
-            DetalledataGridView.DataSource = inscripcion.Detalle;
-            this.detalles = inscripcion.Detalle;
+            
+            detalle = new List<InscripcionDetalle>();
+            this.detalle = inscripcion.Detalle;
             CargarGrid();
         }
 
         private bool ExisteEnLaBaseDeDatos()
         {
-            repositorio = new RepositorioBase<Inscripciones>();
+          RepositorioBase<Inscripciones>  repositorio = new RepositorioBase<Inscripciones>();
             Inscripciones inscripcion = repositorio.Buscar((int)IdnumericUpDown.Value);
             return (inscripcion != null);
         }
@@ -120,6 +121,30 @@ namespace Parcial2_LeonardoEmil.UI.Registro
                 paso = false;
             }
 
+            if(IdEstudiantenumericUpDown.Value ==0)
+            {
+                ErrorProvider.SetError(IdEstudiantenumericUpDown, "Este Campo No puede Ser Cero");
+                paso = false;
+            }
+
+            if (IdAsignumericUpDown.Value == 0)
+            {
+                ErrorProvider.SetError(IdAsignumericUpDown, "Este Campo No puede Ser Cero");
+                paso = false;
+            }
+
+            if(NombretextBox.Text == string.Empty)
+            {
+                ErrorProvider.SetError(NombretextBox, "Este campo no puede estar vacio");
+                paso = false;
+            }
+
+            if(DescripciontextBox.Text == string.Empty)
+            {
+                ErrorProvider.SetError(DescripciontextBox, "Este campo no puede estar vacio");
+                paso = false;
+            }
+
             if(detalle.Count ==0)
             {
                 ErrorProvider.SetError(DetalledataGridView, "El detalle no puede estar vacio...");
@@ -128,20 +153,59 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             return paso;
         }
 
+        private Estudiantes BuscarEstudiante(int id)
+        {
+            RepositorioBase<Estudiantes> db = new RepositorioBase<Estudiantes>();
+            Estudiantes estudiante = new Estudiantes();
+            try
+            {
+                estudiante = db.Buscar(id);
+
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return estudiante;
+        }
+
+
+        private Asignaturas BuscarAsignatura(int id)
+        {
+            RepositorioBase<Asignaturas> db = new RepositorioBase<Asignaturas>();
+            Asignaturas asignatura = new Asignaturas();
+            try
+            {
+                asignatura = db.Buscar(id);
+
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return asignatura;
+        }
+
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            repositorio = new RepositorioBase<Inscripciones>();
-            Inscripciones inscripcion;
-            
+            InscripcionBLL db = new InscripcionBLL();
+
+          RepositorioBase<Inscripciones>  repositorio = new RepositorioBase<Inscripciones>();
+            Inscripciones inscripcion = LlenaClase();
+
             bool paso = false;
 
             if (!Validar())
                 return;
 
-            inscripcion = LlenaClase();
+             
             if (IdnumericUpDown.Value == 0)
             {
-                paso = repositorio.Guardar(inscripcion);
+                paso = db.Guardar(inscripcion);
             }
             else
             {
@@ -150,7 +214,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
                     MessageBox.Show("No se puede modificar una Inscripcion que no existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                paso = repositorio.Modificar(inscripcion);
+                paso = db.Modificar(inscripcion);
             }
             if (paso)
             {
@@ -168,7 +232,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            repositorio = new RepositorioBase<Inscripciones>();
+           RepositorioBase<Inscripciones> repositorio = new RepositorioBase<Inscripciones>();
             ErrorProvider.Clear();
             int.TryParse(IdnumericUpDown.Text, out int id);
 
@@ -186,8 +250,10 @@ namespace Parcial2_LeonardoEmil.UI.Registro
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            repositorio = new RepositorioBase<Inscripciones>();
+           RepositorioBase<Inscripciones> repositorio = new RepositorioBase<Inscripciones>();
             Inscripciones inscripcion = new Inscripciones();
+            Estudiantes estudiante = new Estudiantes();
+            Asignaturas asignatura = new Asignaturas();
 
             int.TryParse(IdnumericUpDown.Text, out int id);
 
@@ -196,7 +262,9 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             if (inscripcion != null)
             {
                 ErrorProvider.Clear();
-                LlenaCampo(inscripcion);
+                LlenaCampo(inscripcion); //todo: llenar datos de la inscripcion
+                LLenarEstudiante(BuscarEstudiante(inscripcion.EstudianteId)); //todo: llena id & nombre del estudiante
+                LlenarAsignatura(BuscarAsignatura(inscripcion.AsignaturaId));// todo: llenar id & descripcion de la asignatura
             }
             else
                 ErrorProvider.SetError(IdnumericUpDown, "Inscripcion  no encontrada");
@@ -226,12 +294,14 @@ namespace Parcial2_LeonardoEmil.UI.Registro
               detalle = (List<InscripcionDetalle>)DetalledataGridView.DataSource;
             RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
 
+              //  Estudiantes estudiante;
+
             this.detalle.Add(
           new InscripcionDetalle(
              //id: 0,
               inscripcionDetalleId: 0,
               inscripcionId: (int)IdnumericUpDown.Value,
-              estudianteId: (int)EstudiantecomboBox.SelectedValue,
+              estudianteId: (int)IdEstudiantenumericUpDown.Value,
               monto: (int)MontonumericUpDown.Value
               ));
              CargarGrid();
@@ -261,7 +331,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
         private void LlenarAsignatura(Asignaturas asignatura)
         {
             IdAsignumericUpDown.Value = asignatura.AsignaturaId;
-            DecripciontextBox.Text = asignatura.Descripcion;
+            DescripciontextBox.Text = asignatura.Descripcion;
         }
 
         private void MontonumericUpDown_ValueChanged(object sender, EventArgs e)
@@ -269,7 +339,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
             Asignaturas asignatura = new Asignaturas();
             // Asignaturas asignatura = new Asignaturas();
-            int id = Convert.ToInt32(AsignaturacomboBox.SelectedValue);
+            int id=1;//= Convert.ToInt32(AsignaturacomboBox.SelectedValue);
             
             asignatura = repositorio.Buscar(id);
             if (id == 0)

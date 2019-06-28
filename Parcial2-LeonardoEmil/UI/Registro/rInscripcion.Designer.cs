@@ -36,8 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.EstudiantecomboBox = new System.Windows.Forms.ComboBox();
-            this.AsignaturacomboBox = new System.Windows.Forms.ComboBox();
             this.MontonumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
@@ -57,7 +55,7 @@
             this.IdAsignumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.BuscarAsignbutton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.DecripciontextBox = new System.Windows.Forms.TextBox();
+            this.DescripciontextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MontonumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
@@ -94,7 +92,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(85, 368);
+            this.label2.Location = new System.Drawing.Point(91, 322);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 3;
@@ -121,35 +119,15 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 249);
+            this.label5.Location = new System.Drawing.Point(5, 202);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 13);
             this.label5.TabIndex = 6;
             this.label5.Text = "ID_A";
             // 
-            // EstudiantecomboBox
-            // 
-            this.EstudiantecomboBox.BackColor = System.Drawing.SystemColors.Window;
-            this.EstudiantecomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.EstudiantecomboBox.FormattingEnabled = true;
-            this.EstudiantecomboBox.Location = new System.Drawing.Point(209, 79);
-            this.EstudiantecomboBox.Name = "EstudiantecomboBox";
-            this.EstudiantecomboBox.Size = new System.Drawing.Size(121, 21);
-            this.EstudiantecomboBox.TabIndex = 7;
-            // 
-            // AsignaturacomboBox
-            // 
-            this.AsignaturacomboBox.BackColor = System.Drawing.SystemColors.Window;
-            this.AsignaturacomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.AsignaturacomboBox.FormattingEnabled = true;
-            this.AsignaturacomboBox.Location = new System.Drawing.Point(76, 193);
-            this.AsignaturacomboBox.Name = "AsignaturacomboBox";
-            this.AsignaturacomboBox.Size = new System.Drawing.Size(121, 21);
-            this.AsignaturacomboBox.TabIndex = 8;
-            // 
             // MontonumericUpDown
             // 
-            this.MontonumericUpDown.Location = new System.Drawing.Point(154, 368);
+            this.MontonumericUpDown.Location = new System.Drawing.Point(160, 322);
             this.MontonumericUpDown.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -173,7 +151,7 @@
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.Location = new System.Drawing.Point(16, 394);
+            this.Nuevobutton.Location = new System.Drawing.Point(22, 348);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 23);
             this.Nuevobutton.TabIndex = 11;
@@ -183,7 +161,7 @@
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(106, 394);
+            this.Guardarbutton.Location = new System.Drawing.Point(112, 348);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 23);
             this.Guardarbutton.TabIndex = 12;
@@ -193,7 +171,7 @@
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Location = new System.Drawing.Point(199, 394);
+            this.Eliminarbutton.Location = new System.Drawing.Point(205, 348);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(75, 23);
             this.Eliminarbutton.TabIndex = 13;
@@ -209,7 +187,7 @@
             // 
             this.addEstudiante.AutoSize = true;
             this.addEstudiante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addEstudiante.Location = new System.Drawing.Point(225, 50);
+            this.addEstudiante.Location = new System.Drawing.Point(267, 55);
             this.addEstudiante.Name = "addEstudiante";
             this.addEstudiante.Size = new System.Drawing.Size(18, 20);
             this.addEstudiante.TabIndex = 14;
@@ -220,7 +198,7 @@
             // 
             this.addAsignatura.AutoSize = true;
             this.addAsignatura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addAsignatura.Location = new System.Drawing.Point(202, 194);
+            this.addAsignatura.Location = new System.Drawing.Point(156, 199);
             this.addAsignatura.Name = "addAsignatura";
             this.addAsignatura.Size = new System.Drawing.Size(18, 20);
             this.addAsignatura.TabIndex = 15;
@@ -230,7 +208,7 @@
             // DetalledataGridView
             // 
             this.DetalledataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DetalledataGridView.Location = new System.Drawing.Point(17, 284);
+            this.DetalledataGridView.Location = new System.Drawing.Point(23, 238);
             this.DetalledataGridView.Name = "DetalledataGridView";
             this.DetalledataGridView.Size = new System.Drawing.Size(203, 70);
             this.DetalledataGridView.TabIndex = 16;
@@ -239,7 +217,7 @@
             // 
             this.detalleButton.AutoSize = true;
             this.detalleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detalleButton.Location = new System.Drawing.Point(303, 284);
+            this.detalleButton.Location = new System.Drawing.Point(309, 238);
             this.detalleButton.Name = "detalleButton";
             this.detalleButton.Size = new System.Drawing.Size(18, 20);
             this.detalleButton.TabIndex = 17;
@@ -293,7 +271,7 @@
             // 
             // BuscarEstbutton
             // 
-            this.BuscarEstbutton.Location = new System.Drawing.Point(267, 50);
+            this.BuscarEstbutton.Location = new System.Drawing.Point(187, 53);
             this.BuscarEstbutton.Name = "BuscarEstbutton";
             this.BuscarEstbutton.Size = new System.Drawing.Size(63, 23);
             this.BuscarEstbutton.TabIndex = 23;
@@ -303,7 +281,7 @@
             // 
             // IdAsignumericUpDown
             // 
-            this.IdAsignumericUpDown.Location = new System.Drawing.Point(48, 246);
+            this.IdAsignumericUpDown.Location = new System.Drawing.Point(41, 200);
             this.IdAsignumericUpDown.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -315,7 +293,7 @@
             // 
             // BuscarAsignbutton
             // 
-            this.BuscarAsignbutton.Location = new System.Drawing.Point(118, 244);
+            this.BuscarAsignbutton.Location = new System.Drawing.Point(111, 197);
             this.BuscarAsignbutton.Name = "BuscarAsignbutton";
             this.BuscarAsignbutton.Size = new System.Drawing.Size(43, 23);
             this.BuscarAsignbutton.TabIndex = 25;
@@ -326,26 +304,26 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(167, 249);
+            this.label8.Location = new System.Drawing.Point(173, 203);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(63, 13);
             this.label8.TabIndex = 27;
             this.label8.Text = "Descripcion";
             // 
-            // DecripciontextBox
+            // DescripciontextBox
             // 
-            this.DecripciontextBox.Location = new System.Drawing.Point(240, 245);
-            this.DecripciontextBox.Name = "DecripciontextBox";
-            this.DecripciontextBox.Size = new System.Drawing.Size(100, 20);
-            this.DecripciontextBox.TabIndex = 26;
+            this.DescripciontextBox.Location = new System.Drawing.Point(246, 199);
+            this.DescripciontextBox.Name = "DescripciontextBox";
+            this.DescripciontextBox.Size = new System.Drawing.Size(100, 20);
+            this.DescripciontextBox.TabIndex = 26;
             // 
             // rInscripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(346, 439);
+            this.ClientSize = new System.Drawing.Size(363, 439);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.DecripciontextBox);
+            this.Controls.Add(this.DescripciontextBox);
             this.Controls.Add(this.BuscarAsignbutton);
             this.Controls.Add(this.IdAsignumericUpDown);
             this.Controls.Add(this.BuscarEstbutton);
@@ -363,8 +341,6 @@
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.MontonumericUpDown);
-            this.Controls.Add(this.AsignaturacomboBox);
-            this.Controls.Add(this.EstudiantecomboBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -406,15 +382,13 @@
         private System.Windows.Forms.Label detalleButton;
         private System.Windows.Forms.NumericUpDown PrecionumericUpDown;
         private System.Windows.Forms.Label label6;
-        public System.Windows.Forms.ComboBox AsignaturacomboBox;
         public System.Windows.Forms.NumericUpDown MontonumericUpDown;
-        public System.Windows.Forms.ComboBox EstudiantecomboBox;
         private System.Windows.Forms.Button BuscarEstbutton;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox NombretextBox;
         private System.Windows.Forms.NumericUpDown IdEstudiantenumericUpDown;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox DecripciontextBox;
+        private System.Windows.Forms.TextBox DescripciontextBox;
         private System.Windows.Forms.Button BuscarAsignbutton;
         private System.Windows.Forms.NumericUpDown IdAsignumericUpDown;
     }

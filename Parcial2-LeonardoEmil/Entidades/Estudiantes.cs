@@ -15,13 +15,7 @@ namespace Parcial2_LeonardoEmil.Entidades
         public string Nombres { get; set; }
         public decimal Balance { get; set; }
 
-        public Estudiantes(int estudianteId, DateTime fechaIngreso, string nombres, decimal balance)
-        {
-            EstudianteId = estudianteId;
-            FechaIngreso = fechaIngreso;
-            Nombres = nombres;
-            Balance = balance;
-        }
+      
         public Estudiantes()
         {
             EstudianteId = 0;

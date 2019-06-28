@@ -10,9 +10,9 @@ namespace Parcial2_LeonardoEmil.DAL
 {
    public class Contexto : DbContext
     {
-        public DbSet<Asignaturas>asignatura { get; set; }
-        public DbSet<Estudiantes>estudiante { get; set; }
-        public DbSet<Inscripciones>inscripcion { get; set; }
+        public DbSet<Asignaturas>Asignatura { get; set; }
+        public DbSet<Estudiantes>Estudiante { get; set; }
+        public DbSet<Inscripciones>Inscripcion { get; set; }
 
         public Contexto() : base("Constr") { }
 

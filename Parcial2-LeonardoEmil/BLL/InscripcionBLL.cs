@@ -10,35 +10,34 @@ using System.Threading.Tasks;
 
 namespace Parcial2_LeonardoEmil.BLL
 {
-   public class InscripcionBLL 
+   public class InscripcionBLL : RepositorioBase<Inscripciones>
     {
-        public static bool Guardar(Inscripciones entity)
+        public override bool Guardar(Inscripciones entity)
         {
             bool paso = false;
-
             Contexto db = new Contexto();
+
             try
             {
-                Inscripciones inscripcion = new Inscripciones();
-                Estudiantes estudiante = new Estudiantes();
-                if(db.inscripcion.Add(entity) !=null)
+                RepositorioBase<Estudiantes> dbE = new RepositorioBase<Estudiantes>();
+
+                if (db.Inscripcion.Add(entity) != null)
                 {
+                    var estudiante = dbE.Buscar(entity.EstudianteId);
+                 //  entity.CalcularMonto();
+                    estudiante.Balance += entity.Monto;
 
-                foreach(var item in inscripcion.Detalle)
-                    {
-                        db.estudiante.Find(item.EstudianteId).Balance += item.Monto;
-                    }
-                    db.inscripcion.Find(inscripcion.EstudianteId).Monto += estudiante.Balance;
-
-                    //  est.Balance +=Monto;
                     paso = db.SaveChanges() > 0;
-                    
+                    dbE.Modificar(estudiante);
                 }
+
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
+
+
             return paso;
         }
 
@@ -50,7 +49,7 @@ namespace Parcial2_LeonardoEmil.BLL
 
             try
             {
-                mantenimiento = contexto.inscripcion.Find(id);
+                mantenimiento = contexto.Inscripcion.Find(id);
               
                 contexto.Dispose();
             }
@@ -59,7 +58,55 @@ namespace Parcial2_LeonardoEmil.BLL
 
         }
 
-        public static bool Modificar(Inscripciones mantenimiento)
+        public override bool Modificar(Inscripciones entity)
+        {
+            bool paso = false;
+            Contexto contexto = new Contexto();
+
+            RepositorioBase<Estudiantes> repositorioEst = new RepositorioBase<Estudiantes>();
+
+            try
+            {
+                var estudiante = repositorioEst.Buscar(entity.EstudianteId);
+
+                var anterior = new RepositorioBase<Inscripciones>().Buscar(entity.InscripcionId);
+
+                estudiante.Balance -= anterior.Monto;
+
+                foreach(var item in anterior.Detalle)
+                {
+                    if(!entity.Detalle.Any(p => p.InscripcionDetalleId == item.InscripcionDetalleId))
+                    {
+                        contexto.Entry(item).State = EntityState.Deleted;
+                    }
+                }
+
+                foreach(var item in entity.Detalle)
+                {
+                    if (item.InscripcionDetalleId == 0)
+                    {
+                        contexto.Entry(item).State = EntityState.Added;
+                    }
+                    else
+
+                    estudiante.Balance += entity.Monto;
+
+                    repositorioEst.Modificar(estudiante);
+
+                    contexto.Entry(entity).State = EntityState.Modified;
+
+                    paso = contexto.SaveChanges() > 0;
+                }
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
+
+
+        public static bool Modifica2r(Inscripciones mantenimiento)
         {
 
             bool paso = false;
@@ -73,7 +120,7 @@ namespace Parcial2_LeonardoEmil.BLL
                     foreach (var item in Mantenimiento.Detalle)
                     {
 
-                        contexto.estudiante.Find(item.EstudianteId).Balance += item.Monto;
+                        contexto.Estudiante.Find(item.EstudianteId).Balance += item.Monto;
 
 
                         if (!mantenimiento.Detalle.ToList().Exists(v => v.InscripcionId == item.EstudianteId))
@@ -100,23 +147,6 @@ namespace Parcial2_LeonardoEmil.BLL
 
         }
 
-        public static void ActualizarBalance()
-        {
-            Estudiantes estudiante = new Estudiantes();
-
-            rInscripcion ri = new rInscripcion();
-            RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
-            Asignaturas asignatura = new Asignaturas();
-
-            int id = Convert.ToInt32(ri.AsignaturacomboBox.SelectedValue);
-
-            int est = Convert.ToInt32(ri.EstudiantecomboBox.SelectedValue);
-
-            asignatura = repositorio.Buscar(id);
-            
-              estudiante.Balance += ri.MontonumericUpDown.Value;
-     
-
-        }
+       
     }
 }

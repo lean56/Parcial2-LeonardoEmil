@@ -14,7 +14,6 @@ namespace Parcial2_LeonardoEmil.UI.Registro
 {
     public partial class rEstudiantes : Form
     {
-        RepositorioBase<Estudiantes> repositorio;
 
         public rEstudiantes()
         {
@@ -52,7 +51,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
 
         private bool ExisteEnLaBaseDeDatos()
         {
-            repositorio = new RepositorioBase<Estudiantes>();
+          RepositorioBase<Estudiantes>  repositorio = new RepositorioBase<Estudiantes>();
             Estudiantes estudiante = repositorio.Buscar((int)IdnumericUpDown.Value);
             return (estudiante != null);
         }
@@ -76,9 +75,9 @@ namespace Parcial2_LeonardoEmil.UI.Registro
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            repositorio = new RepositorioBase<Estudiantes>();
+            RepositorioBase<Estudiantes> repositorio = new RepositorioBase<Estudiantes>();
 
-            Estudiantes estudiante;
+            Estudiantes estudiante = new Estudiantes();
             bool paso = false;
 
             if (!Validar())
@@ -115,7 +114,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            repositorio = new RepositorioBase<Estudiantes>();
+           RepositorioBase<Estudiantes>  repositorio = new RepositorioBase<Estudiantes>();
             ErrorProvider.Clear();
             int.TryParse(IdnumericUpDown.Text, out int id);
 
@@ -133,7 +132,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            repositorio = new RepositorioBase<Estudiantes>();
+           RepositorioBase<Estudiantes> repositorio = new RepositorioBase<Estudiantes>();
             Estudiantes estudiante = new Estudiantes();
             int.TryParse(IdnumericUpDown.Text, out int id);
 
