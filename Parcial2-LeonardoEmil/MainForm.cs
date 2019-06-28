@@ -29,5 +29,11 @@ namespace Parcial2_LeonardoEmil
             rAsignatura ra = new rAsignatura();
             ra.Show();
         }
+
+        private void inscripcionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rInscripcion inscripcion = new rInscripcion();
+            inscripcion.Show();
+        }
     }
 }

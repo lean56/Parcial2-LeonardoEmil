@@ -66,11 +66,11 @@ namespace Parcial2_LeonardoEmil.UI.Registro
                 ErrorProvider.SetError(NombretextBox, "Este Campo No puede Estar Vacio!!");
                 paso = false;
             }
-            if (BalancenumericUpDown.Value == 0)
-            {
-                ErrorProvider.SetError(BalancenumericUpDown, "Este Campo No puede Ser Cero");
-                paso = false;
-            }
+         //   if (BalancenumericUpDown.Value == 0)
+           // {
+             //   ErrorProvider.SetError(BalancenumericUpDown, "Este Campo No puede Ser Cero");
+               // paso = false;
+            //}
             return paso;
         }
 

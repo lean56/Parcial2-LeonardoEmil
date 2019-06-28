@@ -13,12 +13,13 @@ namespace Parcial2_LeonardoEmil.Entidades
         public int AsignaturaId { get; set; }
         public string Descripcion { get; set; }
         public int Creditos { get; set; }
+       
 
         public Asignaturas(int asignaturaId, string descripcion, int creditos)
         {
             AsignaturaId = asignaturaId;
             Descripcion = descripcion;
-            Creditos = creditos;
+            Creditos = creditos;  
         }
         public Asignaturas()
         {

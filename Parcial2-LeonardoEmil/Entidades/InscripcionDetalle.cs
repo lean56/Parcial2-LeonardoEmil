@@ -11,6 +11,7 @@ namespace Parcial2_LeonardoEmil.Entidades
    public class InscripcionDetalle
     {
         [Key]
+        //public int Id { get; set; }
         public int InscripcionDetalleId { get; set; }
         public int InscripcionId { get; set; }
         public int EstudianteId { get; set; }
@@ -21,19 +22,20 @@ namespace Parcial2_LeonardoEmil.Entidades
 
         public InscripcionDetalle()
         {
+            //Id = 0;
             InscripcionDetalleId = 0;
             InscripcionId = 0;
             EstudianteId = 0;
             Monto = 0;
         }
 
-        public InscripcionDetalle(int inscripcionDetalleId, int inscripcionId, int estudianteId, decimal monto, Estudiantes estudiante)
+        public InscripcionDetalle(int inscripcionDetalleId, int inscripcionId, int estudianteId, decimal monto)
         {
+          //  Id = id;
             InscripcionDetalleId = inscripcionDetalleId;
             InscripcionId = inscripcionId;
             EstudianteId = estudianteId;
             Monto = monto;
-            Estudiante = estudiante;
         }
     }
 }

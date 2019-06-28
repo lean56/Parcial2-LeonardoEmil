@@ -41,7 +41,7 @@ namespace Parcial2_LeonardoEmil.BLL
             try
             {
                 _contexto.Entry(entity).State = EntityState.Modified;
-                paso = _contexto.SaveChanges() > 0;
+                paso = (_contexto.SaveChanges() > 0);
             }
             catch(Exception)
             {

@@ -37,7 +37,7 @@ namespace Parcial2_LeonardoEmil.BLL.Tests
             {
                 EstudianteId = 1,
                 FechaIngreso = DateTime.Now,
-                Nombres = "Juan Perez",
+                Nombres = "Juan Perez H",
                 Balance = 10500
             };
 

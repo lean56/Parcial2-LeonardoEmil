@@ -147,7 +147,13 @@
             // 
             // BalancenumericUpDown
             // 
+            this.BalancenumericUpDown.Enabled = false;
             this.BalancenumericUpDown.Location = new System.Drawing.Point(90, 157);
+            this.BalancenumericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.BalancenumericUpDown.Name = "BalancenumericUpDown";
             this.BalancenumericUpDown.Size = new System.Drawing.Size(80, 20);
             this.BalancenumericUpDown.TabIndex = 11;

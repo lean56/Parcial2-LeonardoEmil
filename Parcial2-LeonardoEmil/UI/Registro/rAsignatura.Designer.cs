@@ -57,7 +57,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 67);
+            this.label2.Location = new System.Drawing.Point(13, 61);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 1;
@@ -66,7 +66,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 102);
+            this.label3.Location = new System.Drawing.Point(12, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 2;
@@ -74,7 +74,12 @@
             // 
             // CreditonumericUpDown
             // 
-            this.CreditonumericUpDown.Location = new System.Drawing.Point(83, 100);
+            this.CreditonumericUpDown.Location = new System.Drawing.Point(83, 94);
+            this.CreditonumericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.CreditonumericUpDown.Name = "CreditonumericUpDown";
             this.CreditonumericUpDown.Size = new System.Drawing.Size(66, 20);
             this.CreditonumericUpDown.TabIndex = 3;
@@ -88,7 +93,7 @@
             // 
             // DescripciontextBox
             // 
-            this.DescripciontextBox.Location = new System.Drawing.Point(83, 67);
+            this.DescripciontextBox.Location = new System.Drawing.Point(83, 61);
             this.DescripciontextBox.Name = "DescripciontextBox";
             this.DescripciontextBox.Size = new System.Drawing.Size(100, 20);
             this.DescripciontextBox.TabIndex = 5;
@@ -105,7 +110,7 @@
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.Location = new System.Drawing.Point(12, 166);
+            this.Nuevobutton.Location = new System.Drawing.Point(15, 143);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 23);
             this.Nuevobutton.TabIndex = 7;
@@ -115,7 +120,7 @@
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(95, 166);
+            this.Guardarbutton.Location = new System.Drawing.Point(98, 143);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 23);
             this.Guardarbutton.TabIndex = 8;
@@ -125,7 +130,7 @@
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Location = new System.Drawing.Point(176, 166);
+            this.Eliminarbutton.Location = new System.Drawing.Point(179, 143);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(75, 23);
             this.Eliminarbutton.TabIndex = 9;
