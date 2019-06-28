@@ -300,7 +300,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
                 LLenarEstudiante(estudiante);
             }
             else
-                ErrorProvider.SetError(IdnumericUpDown, "Estudiante  no encontrado");
+                ErrorProvider.SetError(IdEstudiantenumericUpDown, "Estudiante  no encontrado");
         }
 
         private void BuscarAsignbutton_Click(object sender, EventArgs e)
@@ -319,7 +319,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
                 LlenarAsignatura(asignatura);
             }
             else
-                ErrorProvider.SetError(IdnumericUpDown, "Asignatura  no encontrada");
+                ErrorProvider.SetError(IdAsignumericUpDown, "Asignatura  no encontrada");
         }
     }
 }
