@@ -252,6 +252,12 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             // PrecionumericUpDown.Value;
         }
 
+        private void LLenarEstudiante(Estudiantes estudiante)
+        {
+            IdEstudiantenumericUpDown.Value = estudiante.EstudianteId;
+            NombretextBox.Text = estudiante.Nombres;
+        }
+
         private void MontonumericUpDown_ValueChanged(object sender, EventArgs e)
         {
             RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
@@ -270,7 +276,25 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             decimal credito = asignatura.Creditos;
             decimal precio = PrecionumericUpDown.Value;
             MontonumericUpDown.Value = (asignatura.Creditos * precio);
-            // PrecionumericUpDown.Value;
+        }
+
+        private void BuscarEstbutton_Click(object sender, EventArgs e)
+        {
+            RepositorioBase<Estudiantes> repositorio = new RepositorioBase<Estudiantes>();
+
+            Estudiantes estudiante;
+
+            int.TryParse(IdEstudiantenumericUpDown.Text, out int id);
+
+            estudiante = repositorio.Buscar(id);
+
+            if (estudiante != null)
+            {
+                ErrorProvider.Clear();
+                LLenarEstudiante(estudiante);
+            }
+            else
+                ErrorProvider.SetError(IdnumericUpDown, "Estudiante  no encontrado");
         }
     }
 }

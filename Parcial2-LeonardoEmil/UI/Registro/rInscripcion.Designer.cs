@@ -294,6 +294,7 @@
             this.BuscarEstbutton.TabIndex = 23;
             this.BuscarEstbutton.Text = "Buscar";
             this.BuscarEstbutton.UseVisualStyleBackColor = true;
+            this.BuscarEstbutton.Click += new System.EventHandler(this.BuscarEstbutton_Click);
             // 
             // rInscripcion
             // 
