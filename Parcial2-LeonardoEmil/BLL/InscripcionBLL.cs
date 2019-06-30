@@ -10,24 +10,24 @@ using System.Threading.Tasks;
 
 namespace Parcial2_LeonardoEmil.BLL
 {
-   public class InscripcionBLL : RepositorioBase<Inscripciones>
+    public class InscripcionBLL : RepositorioBase<Inscripciones>
     {
         public override bool Guardar(Inscripciones entity)
         {
             bool paso = false;
-            Contexto db = new Contexto();
+            Contexto contexto = new Contexto();
 
             try
             {
                 RepositorioBase<Estudiantes> repositorioEst = new RepositorioBase<Estudiantes>();
 
-                if (db.Inscripcion.Add(entity) != null)
+                if (contexto.Inscripcion.Add(entity) != null)
                 {
                     var estudiante = repositorioEst.Buscar(entity.EstudianteId);
                     entity.CalcularMonto();
                     estudiante.Balance += entity.Monto;
 
-                    paso = db.SaveChanges() > 0;
+                    paso = contexto.SaveChanges() > 0;
                     repositorioEst.Modificar(estudiante);
                 }
 
@@ -36,27 +36,14 @@ namespace Parcial2_LeonardoEmil.BLL
             {
                 throw;
             }
-
+            finally
+            {
+                contexto.Dispose();
+            }
 
             return paso;
         }
 
-        public static Inscripciones Buscar(int id)
-        {
-
-            Inscripciones mantenimiento = new Inscripciones();
-            Contexto contexto = new Contexto();
-
-            try
-            {
-                mantenimiento = contexto.Inscripcion.Find(id);
-              
-                contexto.Dispose();
-            }
-            catch (Exception) { throw; }
-            return mantenimiento;
-
-        }
 
         public override bool Modificar(Inscripciones inscripcion)
         {
@@ -98,60 +85,50 @@ namespace Parcial2_LeonardoEmil.BLL
                 contexto.Entry(inscripcion).State = EntityState.Modified;
 
                 paso = contexto.SaveChanges() > 0;
-            
-            }
-            catch(Exception)
-            {
-                throw;
-            }
-            return paso;
-        }
 
-     
-
-
-
-        public static bool Modifica2r(Inscripciones mantenimiento)
-        {
-
-            bool paso = false;
-
-            Contexto contexto = new Contexto();
-            var Mantenimiento = Buscar(mantenimiento.EstudianteId);
-            try
-            {
-                if (Mantenimiento != null)
-                {
-                    foreach (var item in Mantenimiento.Detalle)
-                    {
-
-                        contexto.Estudiante.Find(item.AsignaturaId).Balance += item.SubTotal;
-
-
-                        if (!mantenimiento.Detalle.ToList().Exists(v => v.InscripcionId == item.AsignaturaId))
-                        {
-                            // contexto.Articulo.Find(item.ArticuloId).Cantidad -= item.Cantidad;
-
-                          //  item.Estudiante = null;
-                            contexto.Entry(item).State = EntityState.Deleted;
-                        }
-                    }
-
-                    if (contexto.SaveChanges() > 0)
-                    {
-                        paso = true;
-                    }
-                    contexto.Dispose();
-                }
             }
             catch (Exception)
             {
                 throw;
             }
+            finally
+            {
+                contexto.Dispose();
+            }
             return paso;
-
         }
 
-       
+        public override bool Eliminar(int id)
+        {
+            bool paso = false;
+            Contexto db = new Contexto();
+            RepositorioBase<Estudiantes> repositorioEst = new RepositorioBase<Estudiantes>();
+            try
+            {
+                var Inscripcion = db.Inscripcion.Find(id);
+                var estudiante = repositorioEst.Buscar(Inscripcion.EstudianteId);
+
+                estudiante.Balance = estudiante.Balance - Inscripcion.Monto;
+
+                repositorioEst.Modificar(estudiante);
+
+                db.Entry(Inscripcion).State = EntityState.Deleted;
+
+                paso = (db.SaveChanges() > 0);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                db.Dispose();
+            }
+            return paso;
+        }
     }
 }
+
+
+
+
