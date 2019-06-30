@@ -58,7 +58,6 @@ namespace Parcial2_LeonardoEmil.UI.Registro
         private bool Validar()
         {
             bool paso = true;
-
             if (String.IsNullOrWhiteSpace(NombretextBox.Text))
             {
                 ErrorProvider.SetError(NombretextBox, "Este Campo No puede Estar Vacio!!");

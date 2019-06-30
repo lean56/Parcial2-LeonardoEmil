@@ -56,6 +56,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
         private bool Validar()
         {
             bool paso = true;
+            RepositorioBase<Asignaturas> repositorioA = new RepositorioBase<Asignaturas>();
 
             if (String.IsNullOrWhiteSpace(DescripciontextBox.Text))
             {
@@ -67,6 +68,12 @@ namespace Parcial2_LeonardoEmil.UI.Registro
                 ErrorProvider.SetError(CreditonumericUpDown, "Este Campo No puede Ser Cero");
                 paso = false;
             }
+            if(repositorioA.Duplicado(p => p.Descripcion == DescripciontextBox.Text))
+            {
+                ErrorProvider.SetError(DescripciontextBox, "Esta Asignatura Ya existe!!!");
+                paso = false;
+            }
+            
             return paso;
         }
 
