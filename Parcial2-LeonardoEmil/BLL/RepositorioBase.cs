@@ -103,5 +103,27 @@ namespace Parcial2_LeonardoEmil.BLL
             _contexto.Dispose();
         }
 
+        public virtual bool Duplicado(Expression<Func<T, bool>> descripcion)
+        {
+            bool paso = false;
+
+            try
+            {
+                paso = _contexto.Set<T>().Any(descripcion);
+              
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                _contexto.Dispose();
+            }
+            
+            return paso;
+        }
+
+
     }
 }

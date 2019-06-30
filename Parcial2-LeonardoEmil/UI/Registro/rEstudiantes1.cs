@@ -24,7 +24,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             IdnumericUpDown.Value = 0;
             NombretextBox.Text = string.Empty;
             FechadateTimePicker.Value = DateTime.Now;
-            BalancetextBox.Text = "0";
+            BalancetextBox.Text = "0.00";
             ErrorProvider.Clear();
         }
 
