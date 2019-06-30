@@ -39,6 +39,7 @@
             this.RegistroAsignatura = new System.Windows.Forms.Button();
             this.RegistroInscripcion = new System.Windows.Forms.Button();
             this.RegistroEstudiante = new System.Windows.Forms.Button();
+            this.ConsultaAbutton = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.restaurar)).BeginInit();
@@ -51,6 +52,7 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.MenuVertical.Controls.Add(this.ConsultaAbutton);
             this.MenuVertical.Controls.Add(this.RegistroAsignatura);
             this.MenuVertical.Controls.Add(this.RegistroInscripcion);
             this.MenuVertical.Controls.Add(this.RegistroEstudiante);
@@ -198,6 +200,24 @@
             this.RegistroEstudiante.UseVisualStyleBackColor = false;
             this.RegistroEstudiante.Click += new System.EventHandler(this.RegistroEstudiante_Click);
             // 
+            // ConsultaAbutton
+            // 
+            this.ConsultaAbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.ConsultaAbutton.FlatAppearance.BorderSize = 0;
+            this.ConsultaAbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.ConsultaAbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ConsultaAbutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ConsultaAbutton.Image = global::Parcial2_LeonardoEmil.Properties.Resources.travel_journey_icon_icons_com_55995;
+            this.ConsultaAbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ConsultaAbutton.Location = new System.Drawing.Point(3, 333);
+            this.ConsultaAbutton.Name = "ConsultaAbutton";
+            this.ConsultaAbutton.Size = new System.Drawing.Size(164, 47);
+            this.ConsultaAbutton.TabIndex = 8;
+            this.ConsultaAbutton.Text = "Consulta Asignatura";
+            this.ConsultaAbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ConsultaAbutton.UseVisualStyleBackColor = false;
+            this.ConsultaAbutton.Click += new System.EventHandler(this.ConsultaAbutton_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,5 +255,6 @@
         private System.Windows.Forms.Button RegistroInscripcion;
         private System.Windows.Forms.Button RegistroAsignatura;
         public System.Windows.Forms.Panel PanelContenedor;
+        private System.Windows.Forms.Button ConsultaAbutton;
     }
 }

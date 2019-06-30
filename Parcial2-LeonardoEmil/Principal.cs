@@ -1,4 +1,5 @@
-﻿using Parcial2_LeonardoEmil.UI.Registro;
+﻿using Parcial2_LeonardoEmil.UI.Consultas;
+using Parcial2_LeonardoEmil.UI.Registro;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -97,6 +98,11 @@ namespace Parcial2_LeonardoEmil
         private void RegistroAsignatura_Click_1(object sender, EventArgs e)
         {
             AbrirFormInPanel(new rAsignatura());
+        }
+
+        private void ConsultaAbutton_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new cAsignaturas());
         }
     }
 }
