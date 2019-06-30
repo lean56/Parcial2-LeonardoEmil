@@ -58,16 +58,19 @@ namespace Parcial2_LeonardoEmil.UI.Registro
         private bool Validar()
         {
             bool paso = true;
+            RepositorioBase<Estudiantes> repositorioE = new RepositorioBase<Estudiantes>();
+
             if (String.IsNullOrWhiteSpace(NombretextBox.Text))
             {
                 ErrorProvider.SetError(NombretextBox, "Este Campo No puede Estar Vacio!!");
                 paso = false;
             }
-            //   if (BalancenumericUpDown.Value == 0)
-            // {
-            //   ErrorProvider.SetError(BalancenumericUpDown, "Este Campo No puede Ser Cero");
-            // paso = false;
-            //}
+            if (repositorioE.Duplicado(p => p.Nombres == NombretextBox.Text))
+            {
+                ErrorProvider.SetError(NombretextBox, "Este Estudiante ya Existe!!!");
+                paso = false;
+            }
+         
             return paso;
         }
 
