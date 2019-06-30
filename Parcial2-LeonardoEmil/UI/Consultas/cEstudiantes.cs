@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Parcial2_LeonardoEmil.UI.Consultas
 {
-    public partial class cAsignaturas : Form
+    public partial class cEstudiantes : Form
     {
-        public cAsignaturas()
+        public cEstudiantes()
         {
             InitializeComponent();
         }
@@ -37,14 +37,14 @@ namespace Parcial2_LeonardoEmil.UI.Consultas
                 CristerioTextBox.Focus();
                 paso = false;
             }
+
             return paso;
         }
 
-
         private void ConsultaUserbutton_Click(object sender, EventArgs e)
         {
-            var listado = new List<Asignaturas>();
-            RepositorioBase<Asignaturas> repositorioA = new RepositorioBase<Asignaturas>();
+            var listado = new List<Estudiantes>();
+            RepositorioBase<Estudiantes> repositorioA = new RepositorioBase<Estudiantes>();
 
             if (!Validar())
                 return;
@@ -56,7 +56,7 @@ namespace Parcial2_LeonardoEmil.UI.Consultas
                     case 0://Todo: todo
                         listado = repositorioA.GetList(p => true);
                         break;
-                    case 1: //ID
+                    case 1: //Todo: ID
                         if (CristerioTextBox.Text.Any(x => !char.IsNumber(x)))
                         {
                             MyErrorProvider.SetError(CristerioTextBox, "No es Un Numero,Digite el ID");
@@ -64,22 +64,23 @@ namespace Parcial2_LeonardoEmil.UI.Consultas
                         else
                         {
                             int id = Convert.ToInt32(CristerioTextBox.Text);
-                            listado = repositorioA.GetList(p => p.AsignaturaId == id);
+                            listado = repositorioA.GetList(p => p.EstudianteId == id);
                         }
                         break;
-                    case 2://Descripcion
-                        listado = repositorioA.GetList(p => p.Descripcion.Contains(CristerioTextBox.Text));
+                    case 2://Todo: Nombres
+                        listado = repositorioA.GetList(p => p.Nombres.Contains(CristerioTextBox.Text));
                         break;
                 }
+                listado = listado.Where(c => c.FechaIngreso.Date >= DesdedateTimePicker.Value.Date && c.FechaIngreso.Date <= HastadateTimePicker.Value.Date).ToList();
             }
             else
             {
                 listado = repositorioA.GetList(p => true);
             }
-
+            
             cAsignaturadataGridView.DataSource = null;
             cAsignaturadataGridView.DataSource = listado;
+           
         }
-
     }
 }

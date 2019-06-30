@@ -104,5 +104,10 @@ namespace Parcial2_LeonardoEmil
         {
             AbrirFormInPanel(new cAsignaturas());
         }
+
+        private void cEstudiantesbutton_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new cEstudiantes());
+        }
     }
 }

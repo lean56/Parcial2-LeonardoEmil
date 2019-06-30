@@ -29,17 +29,18 @@
         private void InitializeComponent()
         {
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.ConsultaAbutton = new System.Windows.Forms.Button();
+            this.RegistroAsignatura = new System.Windows.Forms.Button();
+            this.RegistroInscripcion = new System.Windows.Forms.Button();
+            this.RegistroEstudiante = new System.Windows.Forms.Button();
             this.BarraTitulo = new System.Windows.Forms.Panel();
-            this.PanelContenedor = new System.Windows.Forms.Panel();
             this.restaurar = new System.Windows.Forms.PictureBox();
             this.min = new System.Windows.Forms.PictureBox();
             this.Max = new System.Windows.Forms.PictureBox();
             this.Salir = new System.Windows.Forms.PictureBox();
             this.HideButton = new System.Windows.Forms.PictureBox();
-            this.RegistroAsignatura = new System.Windows.Forms.Button();
-            this.RegistroInscripcion = new System.Windows.Forms.Button();
-            this.RegistroEstudiante = new System.Windows.Forms.Button();
-            this.ConsultaAbutton = new System.Windows.Forms.Button();
+            this.PanelContenedor = new System.Windows.Forms.Panel();
+            this.cEstudiantesbutton = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.restaurar)).BeginInit();
@@ -52,6 +53,7 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.MenuVertical.Controls.Add(this.cEstudiantesbutton);
             this.MenuVertical.Controls.Add(this.ConsultaAbutton);
             this.MenuVertical.Controls.Add(this.RegistroAsignatura);
             this.MenuVertical.Controls.Add(this.RegistroInscripcion);
@@ -61,6 +63,78 @@
             this.MenuVertical.Name = "MenuVertical";
             this.MenuVertical.Size = new System.Drawing.Size(176, 580);
             this.MenuVertical.TabIndex = 0;
+            // 
+            // ConsultaAbutton
+            // 
+            this.ConsultaAbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.ConsultaAbutton.FlatAppearance.BorderSize = 0;
+            this.ConsultaAbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.ConsultaAbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ConsultaAbutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ConsultaAbutton.Image = global::Parcial2_LeonardoEmil.Properties.Resources.travel_journey_icon_icons_com_55995;
+            this.ConsultaAbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ConsultaAbutton.Location = new System.Drawing.Point(3, 333);
+            this.ConsultaAbutton.Name = "ConsultaAbutton";
+            this.ConsultaAbutton.Size = new System.Drawing.Size(164, 47);
+            this.ConsultaAbutton.TabIndex = 8;
+            this.ConsultaAbutton.Text = "Consulta Asignatura";
+            this.ConsultaAbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ConsultaAbutton.UseVisualStyleBackColor = false;
+            this.ConsultaAbutton.Click += new System.EventHandler(this.ConsultaAbutton_Click);
+            // 
+            // RegistroAsignatura
+            // 
+            this.RegistroAsignatura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.RegistroAsignatura.FlatAppearance.BorderSize = 0;
+            this.RegistroAsignatura.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.RegistroAsignatura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegistroAsignatura.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.RegistroAsignatura.Image = global::Parcial2_LeonardoEmil.Properties.Resources.folder_my_documents_15435;
+            this.RegistroAsignatura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RegistroAsignatura.Location = new System.Drawing.Point(6, 114);
+            this.RegistroAsignatura.Name = "RegistroAsignatura";
+            this.RegistroAsignatura.Size = new System.Drawing.Size(164, 47);
+            this.RegistroAsignatura.TabIndex = 7;
+            this.RegistroAsignatura.Text = "Registro Asignatura";
+            this.RegistroAsignatura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.RegistroAsignatura.UseVisualStyleBackColor = false;
+            this.RegistroAsignatura.Click += new System.EventHandler(this.RegistroAsignatura_Click_1);
+            // 
+            // RegistroInscripcion
+            // 
+            this.RegistroInscripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.RegistroInscripcion.FlatAppearance.BorderSize = 0;
+            this.RegistroInscripcion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.RegistroInscripcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegistroInscripcion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.RegistroInscripcion.Image = global::Parcial2_LeonardoEmil.Properties.Resources.travel_journey_icon_icons_com_55995;
+            this.RegistroInscripcion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RegistroInscripcion.Location = new System.Drawing.Point(3, 258);
+            this.RegistroInscripcion.Name = "RegistroInscripcion";
+            this.RegistroInscripcion.Size = new System.Drawing.Size(164, 47);
+            this.RegistroInscripcion.TabIndex = 6;
+            this.RegistroInscripcion.Text = "Registro Inscripcion";
+            this.RegistroInscripcion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.RegistroInscripcion.UseVisualStyleBackColor = false;
+            this.RegistroInscripcion.Click += new System.EventHandler(this.RegistroInscripcion_Click);
+            // 
+            // RegistroEstudiante
+            // 
+            this.RegistroEstudiante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.RegistroEstudiante.FlatAppearance.BorderSize = 0;
+            this.RegistroEstudiante.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.RegistroEstudiante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegistroEstudiante.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.RegistroEstudiante.Image = global::Parcial2_LeonardoEmil.Properties.Resources.Student_id_35758;
+            this.RegistroEstudiante.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RegistroEstudiante.Location = new System.Drawing.Point(3, 182);
+            this.RegistroEstudiante.Name = "RegistroEstudiante";
+            this.RegistroEstudiante.Size = new System.Drawing.Size(164, 48);
+            this.RegistroEstudiante.TabIndex = 5;
+            this.RegistroEstudiante.Text = "Registro Estudiante";
+            this.RegistroEstudiante.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.RegistroEstudiante.UseVisualStyleBackColor = false;
+            this.RegistroEstudiante.Click += new System.EventHandler(this.RegistroEstudiante_Click);
             // 
             // BarraTitulo
             // 
@@ -76,15 +150,6 @@
             this.BarraTitulo.Size = new System.Drawing.Size(794, 50);
             this.BarraTitulo.TabIndex = 1;
             this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
-            // 
-            // PanelContenedor
-            // 
-            this.PanelContenedor.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.PanelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelContenedor.Location = new System.Drawing.Point(176, 50);
-            this.PanelContenedor.Name = "PanelContenedor";
-            this.PanelContenedor.Size = new System.Drawing.Size(794, 530);
-            this.PanelContenedor.TabIndex = 2;
             // 
             // restaurar
             // 
@@ -146,77 +211,32 @@
             this.HideButton.TabStop = false;
             this.HideButton.Click += new System.EventHandler(this.HideButton_Click);
             // 
-            // RegistroAsignatura
+            // PanelContenedor
             // 
-            this.RegistroAsignatura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.RegistroAsignatura.FlatAppearance.BorderSize = 0;
-            this.RegistroAsignatura.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.RegistroAsignatura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RegistroAsignatura.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.RegistroAsignatura.Image = global::Parcial2_LeonardoEmil.Properties.Resources.folder_my_documents_15435;
-            this.RegistroAsignatura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.RegistroAsignatura.Location = new System.Drawing.Point(6, 114);
-            this.RegistroAsignatura.Name = "RegistroAsignatura";
-            this.RegistroAsignatura.Size = new System.Drawing.Size(164, 47);
-            this.RegistroAsignatura.TabIndex = 7;
-            this.RegistroAsignatura.Text = "Registro Asignatura";
-            this.RegistroAsignatura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.RegistroAsignatura.UseVisualStyleBackColor = false;
-            this.RegistroAsignatura.Click += new System.EventHandler(this.RegistroAsignatura_Click_1);
+            this.PanelContenedor.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.PanelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelContenedor.Location = new System.Drawing.Point(176, 50);
+            this.PanelContenedor.Name = "PanelContenedor";
+            this.PanelContenedor.Size = new System.Drawing.Size(794, 530);
+            this.PanelContenedor.TabIndex = 2;
             // 
-            // RegistroInscripcion
+            // cEstudiantesbutton
             // 
-            this.RegistroInscripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.RegistroInscripcion.FlatAppearance.BorderSize = 0;
-            this.RegistroInscripcion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.RegistroInscripcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RegistroInscripcion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.RegistroInscripcion.Image = global::Parcial2_LeonardoEmil.Properties.Resources.travel_journey_icon_icons_com_55995;
-            this.RegistroInscripcion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.RegistroInscripcion.Location = new System.Drawing.Point(3, 258);
-            this.RegistroInscripcion.Name = "RegistroInscripcion";
-            this.RegistroInscripcion.Size = new System.Drawing.Size(164, 47);
-            this.RegistroInscripcion.TabIndex = 6;
-            this.RegistroInscripcion.Text = "Registro Inscripcion";
-            this.RegistroInscripcion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.RegistroInscripcion.UseVisualStyleBackColor = false;
-            this.RegistroInscripcion.Click += new System.EventHandler(this.RegistroInscripcion_Click);
-            // 
-            // RegistroEstudiante
-            // 
-            this.RegistroEstudiante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.RegistroEstudiante.FlatAppearance.BorderSize = 0;
-            this.RegistroEstudiante.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.RegistroEstudiante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RegistroEstudiante.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.RegistroEstudiante.Image = global::Parcial2_LeonardoEmil.Properties.Resources.Student_id_35758;
-            this.RegistroEstudiante.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.RegistroEstudiante.Location = new System.Drawing.Point(3, 182);
-            this.RegistroEstudiante.Name = "RegistroEstudiante";
-            this.RegistroEstudiante.Size = new System.Drawing.Size(164, 48);
-            this.RegistroEstudiante.TabIndex = 5;
-            this.RegistroEstudiante.Text = "Registro Estudiante";
-            this.RegistroEstudiante.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.RegistroEstudiante.UseVisualStyleBackColor = false;
-            this.RegistroEstudiante.Click += new System.EventHandler(this.RegistroEstudiante_Click);
-            // 
-            // ConsultaAbutton
-            // 
-            this.ConsultaAbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.ConsultaAbutton.FlatAppearance.BorderSize = 0;
-            this.ConsultaAbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.ConsultaAbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ConsultaAbutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ConsultaAbutton.Image = global::Parcial2_LeonardoEmil.Properties.Resources.travel_journey_icon_icons_com_55995;
-            this.ConsultaAbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ConsultaAbutton.Location = new System.Drawing.Point(3, 333);
-            this.ConsultaAbutton.Name = "ConsultaAbutton";
-            this.ConsultaAbutton.Size = new System.Drawing.Size(164, 47);
-            this.ConsultaAbutton.TabIndex = 8;
-            this.ConsultaAbutton.Text = "Consulta Asignatura";
-            this.ConsultaAbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ConsultaAbutton.UseVisualStyleBackColor = false;
-            this.ConsultaAbutton.Click += new System.EventHandler(this.ConsultaAbutton_Click);
+            this.cEstudiantesbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.cEstudiantesbutton.FlatAppearance.BorderSize = 0;
+            this.cEstudiantesbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.cEstudiantesbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cEstudiantesbutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cEstudiantesbutton.Image = global::Parcial2_LeonardoEmil.Properties.Resources.travel_journey_icon_icons_com_55995;
+            this.cEstudiantesbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cEstudiantesbutton.Location = new System.Drawing.Point(0, 402);
+            this.cEstudiantesbutton.Name = "cEstudiantesbutton";
+            this.cEstudiantesbutton.Size = new System.Drawing.Size(164, 47);
+            this.cEstudiantesbutton.TabIndex = 9;
+            this.cEstudiantesbutton.Text = "Consulta Estudiante";
+            this.cEstudiantesbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cEstudiantesbutton.UseVisualStyleBackColor = false;
+            this.cEstudiantesbutton.Click += new System.EventHandler(this.cEstudiantesbutton_Click);
             // 
             // Principal
             // 
@@ -256,5 +276,6 @@
         private System.Windows.Forms.Button RegistroAsignatura;
         public System.Windows.Forms.Panel PanelContenedor;
         private System.Windows.Forms.Button ConsultaAbutton;
+        private System.Windows.Forms.Button cEstudiantesbutton;
     }
 }
