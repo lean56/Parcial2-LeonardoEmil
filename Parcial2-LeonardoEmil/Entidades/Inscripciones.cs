@@ -27,5 +27,18 @@ namespace Parcial2_LeonardoEmil.Entidades
             Monto = 0;
             this.Detalle = new List<InscripcionDetalle>();
         }
+
+        public void CalcularMonto()
+        {
+            decimal total = 0;
+
+            foreach (var item in Detalle)
+            {
+                total += item.SubTotal;
+            }
+
+            Monto = total;
+        }
+
     }
 }

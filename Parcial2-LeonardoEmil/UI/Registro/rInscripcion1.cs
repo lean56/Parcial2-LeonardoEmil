@@ -33,6 +33,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             PrecionumericUpDown.Value = 0;
             MontonumericUpDown.Value = 0;
             detalle = new List<InscripcionDetalle>();
+            ErrorProvider.Clear();
         }
 
 
@@ -50,8 +51,8 @@ namespace Parcial2_LeonardoEmil.UI.Registro
                 inscripcion.EstudianteId = (int)IdEstudiantenumericUpDown.Value;
                 inscripcion.AsignaturaId = (int)IdAsignumericUpDown.Value;
                 inscripcion.Fecha = FechadateTimePicker.Value;
-                inscripcion.Monto = MontonumericUpDown.Value;
-
+                inscripcion.CalcularMonto();
+                TotaltextBox.Text = inscripcion.Monto.ToString();
                 inscripcion.Detalle = this.detalle;
             }
             return inscripcion;
@@ -64,7 +65,8 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             IdAsignumericUpDown.Value = inscripcion.AsignaturaId;
             FechadateTimePicker.Value = inscripcion.Fecha;
             MontonumericUpDown.Value = inscripcion.Monto;
-
+            inscripcion.CalcularMonto();
+            TotaltextBox.Text = inscripcion.Monto.ToString();
             detalle = new List<InscripcionDetalle>();
             this.detalle = inscripcion.Detalle;
             CargarGrid();
@@ -86,11 +88,11 @@ namespace Parcial2_LeonardoEmil.UI.Registro
                 paso = false;
             }
 
-            if (MontonumericUpDown.Value == 0)
-            {
-                ErrorProvider.SetError(MontonumericUpDown, "Este Campo No puede Ser Cero");
-                paso = false;
-            }
+            //if (MontonumericUpDown.Value == 0)
+            //{
+            //    ErrorProvider.SetError(MontonumericUpDown, "Este Campo No puede Ser Cero");
+            //    paso = false;
+            //}
 
             if (IdEstudiantenumericUpDown.Value == 0)
             {
@@ -142,11 +144,8 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             RepositorioBase<Estudiantes> db = new RepositorioBase<Estudiantes>();
             Estudiantes estudiante = new Estudiantes();
             try
-            {   
-                if(estudiante.EstudianteId !=0)
-                    estudiante = db.Buscar(id);
-                else
-                    ErrorProvider.SetError(IdEstudiantenumericUpDown, "Estudiante no existe ");
+            {
+                estudiante = db.Buscar(id);
             }
             catch (Exception)
             {
@@ -161,11 +160,8 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             RepositorioBase<Asignaturas> db = new RepositorioBase<Asignaturas>();
             Asignaturas asignatura = new Asignaturas();
             try
-            {   if(asignatura.AsignaturaId !=0)
-
+            {  
                     asignatura = db.Buscar(id);
-                else
-                    ErrorProvider.SetError(IdAsignumericUpDown, "Asignatura no existe...");
             }
             catch (Exception)
             {
@@ -261,13 +257,13 @@ namespace Parcial2_LeonardoEmil.UI.Registro
                 detalle = (List<InscripcionDetalle>)DetalledataGridView.DataSource;
             RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
 
-
+            Asignaturas asignaturas = BuscarAsignatura((int)IdAsignumericUpDown.Value);
             this.detalle.Add(
           new InscripcionDetalle(
               inscripcionDetalleId: 0,
               inscripcionId: (int)IdnumericUpDown.Value,
-              estudianteId: (int)IdEstudiantenumericUpDown.Value,
-              monto: (int)MontonumericUpDown.Value
+              asignaturaId: asignaturas.AsignaturaId,
+              subTotal: (asignaturas.Creditos * PrecionumericUpDown.Value)
               ));
             CargarGrid();
         }

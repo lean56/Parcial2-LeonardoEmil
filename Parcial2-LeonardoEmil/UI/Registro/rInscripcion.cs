@@ -266,8 +266,8 @@ namespace Parcial2_LeonardoEmil.UI.Registro
           new InscripcionDetalle(
               inscripcionDetalleId: 0,
               inscripcionId: (int)IdnumericUpDown.Value,
-              estudianteId: (int)IdEstudiantenumericUpDown.Value,
-              monto: (int)MontonumericUpDown.Value
+              asignaturaId: (int)IdAsignumericUpDown.Value,
+              subTotal: (int)MontonumericUpDown.Value
               ));
              CargarGrid();
         }

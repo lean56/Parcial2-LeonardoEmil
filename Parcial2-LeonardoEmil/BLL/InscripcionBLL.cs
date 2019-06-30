@@ -19,15 +19,16 @@ namespace Parcial2_LeonardoEmil.BLL
 
             try
             {
-                RepositorioBase<Estudiantes> dbE = new RepositorioBase<Estudiantes>();
+                RepositorioBase<Estudiantes> repositorioEst = new RepositorioBase<Estudiantes>();
 
                 if (db.Inscripcion.Add(entity) != null)
                 {
-                    var estudiante = dbE.Buscar(entity.EstudianteId);
+                    var estudiante = repositorioEst.Buscar(entity.EstudianteId);
+                    entity.CalcularMonto();
                     estudiante.Balance += entity.Monto;
 
                     paso = db.SaveChanges() > 0;
-                    dbE.Modificar(estudiante);
+                    repositorioEst.Modificar(estudiante);
                 }
 
             }
@@ -67,21 +68,18 @@ namespace Parcial2_LeonardoEmil.BLL
             try
             {
                 var estudiante = repositorioEst.Buscar(inscripcion.EstudianteId);
+                var anterior = new RepositorioBase<Inscripciones>().Buscar(inscripcion.InscripcionId);
+                estudiante.Balance -= (decimal)anterior.Monto;
 
-           //     var anterior = new RepositorioBase<Inscripciones>().Buscar(inscripcion.InscripcionId);
-
-               // estudiante.Balance -= anterior.Monto;
-
-                foreach(var item in inscripcion.Detalle)
+                foreach (var item in anterior.Detalle)
                 {
-                    contexto.Estudiante.Find(item.EstudianteId).Balance += item.Monto;
-                    if(!inscripcion.Detalle.ToList().Exists(p => p.InscripcionDetalleId == item.EstudianteId))
+                    if (!inscripcion.Detalle.Any(p => p.InscripcionDetalleId == item.InscripcionDetalleId))
                     {
                         contexto.Entry(item).State = EntityState.Deleted;
                     }
                 }
 
-                foreach(var item in inscripcion.Detalle)
+                foreach (var item in inscripcion.Detalle)
                 {
                     if (item.InscripcionDetalleId == 0)
                     {
@@ -89,10 +87,18 @@ namespace Parcial2_LeonardoEmil.BLL
                     }
                     else
                     {
-                        contexto.Entry(inscripcion).State = EntityState.Modified;
+                        contexto.Entry(item).State = EntityState.Modified;
                     }
-                    paso = contexto.SaveChanges() > 0;
                 }
+
+                inscripcion.CalcularMonto();
+                estudiante.Balance += (decimal)inscripcion.Monto;
+                repositorioEst.Modificar(estudiante);
+
+                contexto.Entry(inscripcion).State = EntityState.Modified;
+
+                paso = contexto.SaveChanges() > 0;
+            
             }
             catch(Exception)
             {
@@ -101,7 +107,9 @@ namespace Parcial2_LeonardoEmil.BLL
             return paso;
         }
 
-    
+     
+
+
 
         public static bool Modifica2r(Inscripciones mantenimiento)
         {
@@ -117,14 +125,14 @@ namespace Parcial2_LeonardoEmil.BLL
                     foreach (var item in Mantenimiento.Detalle)
                     {
 
-                        contexto.Estudiante.Find(item.EstudianteId).Balance += item.Monto;
+                        contexto.Estudiante.Find(item.AsignaturaId).Balance += item.SubTotal;
 
 
-                        if (!mantenimiento.Detalle.ToList().Exists(v => v.InscripcionId == item.EstudianteId))
+                        if (!mantenimiento.Detalle.ToList().Exists(v => v.InscripcionId == item.AsignaturaId))
                         {
                             // contexto.Articulo.Find(item.ArticuloId).Cantidad -= item.Cantidad;
 
-                            item.Estudiante = null;
+                          //  item.Estudiante = null;
                             contexto.Entry(item).State = EntityState.Deleted;
                         }
                     }
