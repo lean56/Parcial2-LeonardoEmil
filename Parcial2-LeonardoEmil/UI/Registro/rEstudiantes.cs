@@ -1,5 +1,5 @@
-﻿using Parcial2_LeonardoEmil.Entidades;
-using Parcial2_LeonardoEmil.BLL;
+﻿using Parcial2_LeonardoEmil.BLL;
+using Parcial2_LeonardoEmil.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +14,6 @@ namespace Parcial2_LeonardoEmil.UI.Registro
 {
     public partial class rEstudiantes : Form
     {
-
         public rEstudiantes()
         {
             InitializeComponent();
@@ -25,7 +24,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             IdnumericUpDown.Value = 0;
             NombretextBox.Text = string.Empty;
             FechadateTimePicker.Value = DateTime.Now;
-            BalancenumericUpDown.Value = 0;
+            BalancetextBox.Text = "0.00";
             ErrorProvider.Clear();
         }
 
@@ -36,8 +35,8 @@ namespace Parcial2_LeonardoEmil.UI.Registro
                 EstudianteId = (int)(IdnumericUpDown.Value),
                 Nombres = NombretextBox.Text,
                 FechaIngreso = FechadateTimePicker.Value,
-                Balance = BalancenumericUpDown.Value
-            };
+                Balance = 0
+        };
             return estudiante;
         }
 
@@ -46,12 +45,12 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             IdnumericUpDown.Value = estudiante.EstudianteId;
             NombretextBox.Text = estudiante.Nombres;
             FechadateTimePicker.Value = estudiante.FechaIngreso;
-            BalancenumericUpDown.Value = estudiante.Balance;
+            BalancetextBox.Text = estudiante.Balance.ToString();
         }
 
         private bool ExisteEnLaBaseDeDatos()
         {
-          RepositorioBase<Estudiantes>  repositorio = new RepositorioBase<Estudiantes>();
+            RepositorioBase<Estudiantes> repositorio = new RepositorioBase<Estudiantes>();
             Estudiantes estudiante = repositorio.Buscar((int)IdnumericUpDown.Value);
             return (estudiante != null);
         }
@@ -59,18 +58,39 @@ namespace Parcial2_LeonardoEmil.UI.Registro
         private bool Validar()
         {
             bool paso = true;
+            RepositorioBase<Estudiantes> repositorioE = new RepositorioBase<Estudiantes>();
 
             if (String.IsNullOrWhiteSpace(NombretextBox.Text))
             {
                 ErrorProvider.SetError(NombretextBox, "Este Campo No puede Estar Vacio!!");
                 paso = false;
             }
-         //   if (BalancenumericUpDown.Value == 0)
-           // {
-             //   ErrorProvider.SetError(BalancenumericUpDown, "Este Campo No puede Ser Cero");
-               // paso = false;
-            //}
+            if (repositorioE.Duplicado(p => p.Nombres == NombretextBox.Text))
+            {
+                ErrorProvider.SetError(NombretextBox, "Este Estudiante ya Existe!!!");
+                paso = false;
+            }
+         
             return paso;
+        }
+
+
+
+        private void Buscarbutton_Click(object sender, EventArgs e)
+        {
+            RepositorioBase<Estudiantes> repositorio = new RepositorioBase<Estudiantes>();
+            Estudiantes estudiante = new Estudiantes();
+            int.TryParse(IdnumericUpDown.Text, out int id);
+
+            estudiante = repositorio.Buscar(id);
+
+            if (estudiante != null)
+            {
+                ErrorProvider.Clear();
+                LlenaCampo(estudiante);
+            }
+            else
+                ErrorProvider.SetError(IdnumericUpDown, "Estudiante No Encontrado!!!");
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
@@ -93,28 +113,22 @@ namespace Parcial2_LeonardoEmil.UI.Registro
                 {
                     MessageBox.Show("No se puede modificar un Estudiante que no existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
-                }   
+                }
                 paso = repositorio.Modificar(estudiante);
             }
-            if(paso)
+            if (paso)
             {
                 MessageBox.Show("Estudiante Guardado!!", "Exito!!!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Limpiar();
             }
             else
                 MessageBox.Show("No Se Pudo Guardar!!", "Fallo!!!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        
 
-        }
-
-        private void Nuevobutton_Click(object sender, EventArgs e)
-        {
-            Limpiar();
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-           RepositorioBase<Estudiantes>  repositorio = new RepositorioBase<Estudiantes>();
+            RepositorioBase<Estudiantes> repositorio = new RepositorioBase<Estudiantes>();
             ErrorProvider.Clear();
             int.TryParse(IdnumericUpDown.Text, out int id);
 
@@ -130,21 +144,14 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             }
         }
 
-        private void Buscarbutton_Click(object sender, EventArgs e)
+        private void Nuevobutton_Click(object sender, EventArgs e)
         {
-           RepositorioBase<Estudiantes> repositorio = new RepositorioBase<Estudiantes>();
-            Estudiantes estudiante = new Estudiantes();
-            int.TryParse(IdnumericUpDown.Text, out int id);
+            Limpiar();
+        }
 
-            estudiante = repositorio.Buscar(id);
-
-            if (estudiante != null)
-            {
-                ErrorProvider.Clear();
-                LlenaCampo(estudiante);
-            }
-            else
-                ErrorProvider.SetError(IdnumericUpDown, "Estudiante No Encontrado!!!");
+        private void CerrarButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

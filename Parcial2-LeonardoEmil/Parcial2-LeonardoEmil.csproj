@@ -81,35 +81,17 @@
     <Compile Include="UI\Registro\rAsignatura.Designer.cs">
       <DependentUpon>rAsignatura.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Registro\rAsignatura1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Registro\rAsignatura1.Designer.cs">
-      <DependentUpon>rAsignatura1.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\Registro\rEstudiantes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Registro\rEstudiantes.Designer.cs">
       <DependentUpon>rEstudiantes.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Registro\rEstudiantes1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Registro\rEstudiantes1.Designer.cs">
-      <DependentUpon>rEstudiantes1.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\Registro\rInscripcion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Registro\rInscripcion.Designer.cs">
       <DependentUpon>rInscripcion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Registro\rInscripcion1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Registro\rInscripcion1.Designer.cs">
-      <DependentUpon>rInscripcion1.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -130,20 +112,11 @@
     <EmbeddedResource Include="UI\Registro\rAsignatura.resx">
       <DependentUpon>rAsignatura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Registro\rAsignatura1.resx">
-      <DependentUpon>rAsignatura1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\Registro\rEstudiantes.resx">
       <DependentUpon>rEstudiantes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Registro\rEstudiantes1.resx">
-      <DependentUpon>rEstudiantes1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\Registro\rInscripcion.resx">
       <DependentUpon>rInscripcion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Registro\rInscripcion1.resx">
-      <DependentUpon>rInscripcion1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

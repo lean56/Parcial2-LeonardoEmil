@@ -14,7 +14,6 @@ namespace Parcial2_LeonardoEmil.UI.Registro
 {
     public partial class rAsignatura : Form
     {
-
         public rAsignatura()
         {
             InitializeComponent();
@@ -28,7 +27,8 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             CreditonumericUpDown.Value = 0;
         }
 
-        private Asignaturas  LlenaClase()
+
+        private Asignaturas LlenaClase()
         {
             Asignaturas asignatura = new Asignaturas()
             {
@@ -48,7 +48,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
 
         private bool ExisteEnLaBaseDeDatos()
         {
-          RepositorioBase<Asignaturas>  repositorio = new RepositorioBase<Asignaturas>();
+            RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
             Asignaturas asignatura = repositorio.Buscar((int)IdnumericUpDown.Value);
             return (asignatura != null);
         }
@@ -56,6 +56,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
         private bool Validar()
         {
             bool paso = true;
+            RepositorioBase<Asignaturas> repositorioA = new RepositorioBase<Asignaturas>();
 
             if (String.IsNullOrWhiteSpace(DescripciontextBox.Text))
             {
@@ -67,17 +68,37 @@ namespace Parcial2_LeonardoEmil.UI.Registro
                 ErrorProvider.SetError(CreditonumericUpDown, "Este Campo No puede Ser Cero");
                 paso = false;
             }
+            if(repositorioA.Duplicado(p => p.Descripcion == DescripciontextBox.Text))
+            {
+                ErrorProvider.SetError(DescripciontextBox, "Esta Asignatura Ya existe!!!");
+                paso = false;
+            }
+            
             return paso;
         }
 
-        private void Nuevobutton_Click(object sender, EventArgs e)
+
+        private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            Limpiar();
+            RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
+            Asignaturas asignatura = new Asignaturas();
+
+            int.TryParse(IdnumericUpDown.Text, out int id);
+
+            asignatura = repositorio.Buscar(id);
+
+            if (asignatura != null)
+            {
+                ErrorProvider.Clear();
+                LlenaCampo(asignatura);
+            }
+            else
+                ErrorProvider.SetError(IdnumericUpDown, "Asignatura no Encontrada");
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-          RepositorioBase<Asignaturas>  repositorio = new RepositorioBase<Asignaturas>();
+            RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
 
             Asignaturas asignatura;
             bool paso = false;
@@ -108,41 +129,33 @@ namespace Parcial2_LeonardoEmil.UI.Registro
                 MessageBox.Show("No Se Pudo Guardar!!", "Fallo!!!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        private void Nuevobutton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-           RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
+            RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
             ErrorProvider.Clear();
 
             int.TryParse(IdnumericUpDown.Text, out int id);
 
-            if(!ExisteEnLaBaseDeDatos())
+            if (!ExisteEnLaBaseDeDatos())
             {
                 ErrorProvider.SetError(IdnumericUpDown, "Asignatura no Existe!!!");
                 return;
             }
-            if(repositorio.Eliminar(id))
+            if (repositorio.Eliminar(id))
             {
                 Limpiar();
                 MessageBox.Show("Asignatura Eliminada!!", "Exito!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-        private void Buscarbutton_Click(object sender, EventArgs e)
+        private void CerrarButton_Click(object sender, EventArgs e)
         {
-           RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
-            Asignaturas asignatura = new Asignaturas();
-
-            int.TryParse(IdnumericUpDown.Text, out int id);
-
-            asignatura = repositorio.Buscar(id);
-
-            if (asignatura != null)
-            {
-                ErrorProvider.Clear();
-                LlenaCampo(asignatura);
-            }
-            else
-                ErrorProvider.SetError(IdnumericUpDown, "Asignatura no Encontrada");
+            this.Close();
         }
     }
 }

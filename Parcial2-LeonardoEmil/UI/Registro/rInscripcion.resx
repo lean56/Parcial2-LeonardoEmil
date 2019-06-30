@@ -121,6 +121,16 @@
     <value>17, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>34</value>
+    <value>43</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Removerbutton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        bwAAAG8B8aLcQwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACiSURBVDhPrZPB
+        DYAgEASpwadQhfVbAzUY/dvCyV7cCKegRh/r425nggadiGimvh8W78clhI4zG+zQQZczfWAwe7+mSCrE
+        K8kOR3TQpaSAGSsxMKMShyOZhYaSCszOWLOzEJu7xLaOWA1h/QY373lKDheCJxILI/8J7mDGSl7BTC5p
+        wlps7RL7/SJ9vsoo5BILVyTHz8QCBjjSFczskux3FrcBNz4dY+kaqjwAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>

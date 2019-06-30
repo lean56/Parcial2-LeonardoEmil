@@ -14,8 +14,8 @@ namespace Parcial2_LeonardoEmil.UI.Registro
 {
     public partial class rInscripcion : Form
     {
-
         public List<InscripcionDetalle> detalle;
+
         public rInscripcion()
         {
             InitializeComponent();
@@ -31,8 +31,9 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             DescripciontextBox.Text = string.Empty;
             FechadateTimePicker.Value = DateTime.Now;
             PrecionumericUpDown.Value = 0;
-            MontonumericUpDown.Value = 0;
+            TotaltextBox.Text = "0.00";
             detalle = new List<InscripcionDetalle>();
+            ErrorProvider.Clear();
         }
 
 
@@ -50,8 +51,8 @@ namespace Parcial2_LeonardoEmil.UI.Registro
                 inscripcion.EstudianteId = (int)IdEstudiantenumericUpDown.Value;
                 inscripcion.AsignaturaId = (int)IdAsignumericUpDown.Value;
                 inscripcion.Fecha = FechadateTimePicker.Value;
-                inscripcion.Monto = MontonumericUpDown.Value;
-                
+                inscripcion.CalcularMonto();
+                TotaltextBox.Text = inscripcion.Monto.ToString();
                 inscripcion.Detalle = this.detalle;
             }
             return inscripcion;
@@ -63,8 +64,8 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             IdEstudiantenumericUpDown.Value = inscripcion.EstudianteId;
             IdAsignumericUpDown.Value = inscripcion.AsignaturaId;
             FechadateTimePicker.Value = inscripcion.Fecha;
-            MontonumericUpDown.Value = inscripcion.Monto;
-            
+            inscripcion.CalcularMonto();
+            TotaltextBox.Text = inscripcion.Monto.ToString();
             detalle = new List<InscripcionDetalle>();
             this.detalle = inscripcion.Detalle;
             CargarGrid();
@@ -72,7 +73,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
 
         private bool ExisteEnLaBaseDeDatos()
         {
-          RepositorioBase<Inscripciones>  repositorio = new RepositorioBase<Inscripciones>();
+            RepositorioBase<Inscripciones> repositorio = new RepositorioBase<Inscripciones>();
             Inscripciones inscripcion = repositorio.Buscar((int)IdnumericUpDown.Value);
             return (inscripcion != null);
         }
@@ -80,19 +81,19 @@ namespace Parcial2_LeonardoEmil.UI.Registro
         private bool Validar()
         {
             bool paso = true;
-            if(PrecionumericUpDown.Value ==0)
+            if (PrecionumericUpDown.Value == 0)
             {
                 ErrorProvider.SetError(PrecionumericUpDown, "Este campo no puede ser cero");
                 paso = false;
             }
 
-            if (MontonumericUpDown.Value == 0)
-            {
-                ErrorProvider.SetError(MontonumericUpDown, "Este Campo No puede Ser Cero");
-                paso = false;
-            }
+            //if (MontonumericUpDown.Value == 0)
+            //{
+            //    ErrorProvider.SetError(MontonumericUpDown, "Este Campo No puede Ser Cero");
+            //    paso = false;
+            //}
 
-            if(IdEstudiantenumericUpDown.Value ==0)
+            if (IdEstudiantenumericUpDown.Value == 0)
             {
                 ErrorProvider.SetError(IdEstudiantenumericUpDown, "Este Campo No puede Ser Cero");
                 paso = false;
@@ -104,24 +105,37 @@ namespace Parcial2_LeonardoEmil.UI.Registro
                 paso = false;
             }
 
-            if(NombretextBox.Text == string.Empty)
+            if (NombretextBox.Text == string.Empty)
             {
                 ErrorProvider.SetError(NombretextBox, "Este campo no puede estar vacio");
                 paso = false;
             }
 
-            if(DescripciontextBox.Text == string.Empty)
+            if (DescripciontextBox.Text == string.Empty)
             {
                 ErrorProvider.SetError(DescripciontextBox, "Este campo no puede estar vacio");
                 paso = false;
             }
 
-            if(detalle.Count ==0)
+            if (detalle.Count == 0)
             {
                 ErrorProvider.SetError(DetalledataGridView, "El detalle no puede estar vacio...");
                 paso = false;
             }
             return paso;
+        }
+
+
+        private void LLenarEstudiante(Estudiantes estudiante)
+        {
+                IdEstudiantenumericUpDown.Value = estudiante.EstudianteId;
+                NombretextBox.Text = estudiante.Nombres;
+        }
+
+        private void LlenarAsignatura(Asignaturas asignatura)
+        {
+                IdAsignumericUpDown.Value = asignatura.AsignaturaId;
+                DescripciontextBox.Text = asignatura.Descripcion;    
         }
 
         private Estudiantes BuscarEstudiante(int id)
@@ -140,14 +154,13 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             return estudiante;
         }
 
-
         private Asignaturas BuscarAsignatura(int id)
         {
             RepositorioBase<Asignaturas> db = new RepositorioBase<Asignaturas>();
             Asignaturas asignatura = new Asignaturas();
             try
-            {
-                asignatura = db.Buscar(id);
+            {  
+                    asignatura = db.Buscar(id);
             }
             catch (Exception)
             {
@@ -161,7 +174,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
         {
             InscripcionBLL db = new InscripcionBLL();
 
-          RepositorioBase<Inscripciones>  repositorio = new RepositorioBase<Inscripciones>();
+            RepositorioBase<Inscripciones> repositorio = new RepositorioBase<Inscripciones>();
             Inscripciones inscripcion = LlenaClase();
 
             bool paso = false;
@@ -169,14 +182,13 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             if (!Validar())
                 return;
 
-             
             if (IdnumericUpDown.Value == 0)
             {
                 paso = db.Guardar(inscripcion);
             }
             else
             {
-                if(!ExisteEnLaBaseDeDatos())
+                if (!ExisteEnLaBaseDeDatos())
                 {
                     MessageBox.Show("No se puede modificar una Inscripcion que no existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -192,14 +204,13 @@ namespace Parcial2_LeonardoEmil.UI.Registro
                 MessageBox.Show("No Se Pudo Guardar!!", "Fallo!!!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void Nuevobutton_Click(object sender, EventArgs e)
-        {
-            Limpiar();
-        }
-
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-           RepositorioBase<Inscripciones> repositorio = new RepositorioBase<Inscripciones>();
+            InscripcionBLL db = new InscripcionBLL();
+
+            RepositorioBase<Inscripciones> repositorio = new RepositorioBase<Inscripciones>();
+
+
             ErrorProvider.Clear();
             int.TryParse(IdnumericUpDown.Text, out int id);
 
@@ -208,7 +219,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
                 ErrorProvider.SetError(IdnumericUpDown, "Inscripcion no existe!!!");
                 return;
             }
-            if(repositorio.Eliminar(id))
+            if (db.Eliminar(id))
             {
                 Limpiar();
                 MessageBox.Show("Inscripcion Eliminada!!", "Exito!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -217,7 +228,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-           RepositorioBase<Inscripciones> repositorio = new RepositorioBase<Inscripciones>();
+            RepositorioBase<Inscripciones> repositorio = new RepositorioBase<Inscripciones>();
             Inscripciones inscripcion = new Inscripciones();
             Estudiantes estudiante = new Estudiantes();
             Asignaturas asignatura = new Asignaturas();
@@ -235,85 +246,6 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             }
             else
                 ErrorProvider.SetError(IdnumericUpDown, "Inscripcion  no encontrada");
-        }
-
-        private void addEstudiante_Click(object sender, EventArgs e)
-        {
-            rEstudiantes estudiante = new rEstudiantes();
-            estudiante.Show();
-        }
-
-        private void addAsignatura_Click(object sender, EventArgs e)
-        {
-            rAsignatura asignatura = new rAsignatura();
-            asignatura.ShowDialog();
-        }
-
-        private void detalleButton_Click(object sender, EventArgs e)
-        {
-            List<InscripcionDetalle> detalle = new List<InscripcionDetalle>();
-
-            if (DetalledataGridView.DataSource != null)
-            {
-                detalle = (List<InscripcionDetalle>)DetalledataGridView.DataSource;
-            }
-            if (DetalledataGridView.DataSource != null)
-              detalle = (List<InscripcionDetalle>)DetalledataGridView.DataSource;
-            RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
-
-
-            this.detalle.Add(
-          new InscripcionDetalle(
-              inscripcionDetalleId: 0,
-              inscripcionId: (int)IdnumericUpDown.Value,
-              asignaturaId: (int)IdAsignumericUpDown.Value,
-              subTotal: (int)MontonumericUpDown.Value
-              ));
-             CargarGrid();
-        }
-
-        private void PrecionumericUpDown_ValueChanged(object sender, EventArgs e)
-        {
-          RepositorioBase<Asignaturas>  repositorio = new RepositorioBase<Asignaturas>();
-            Asignaturas asignatura = new Asignaturas();
-            int id=1;
-
-            asignatura = repositorio.Buscar(id);
-            decimal credito =   asignatura.Creditos;
-            decimal precio = PrecionumericUpDown.Value;
-
-            MontonumericUpDown.Value = (asignatura.Creditos * precio);
-        }
-
-        private void LLenarEstudiante(Estudiantes estudiante)
-        {
-            IdEstudiantenumericUpDown.Value = estudiante.EstudianteId;
-            NombretextBox.Text = estudiante.Nombres;
-        }
-
-        private void LlenarAsignatura(Asignaturas asignatura)
-        {
-            IdAsignumericUpDown.Value = asignatura.AsignaturaId;
-            DescripciontextBox.Text = asignatura.Descripcion;
-        }
-
-        private void MontonumericUpDown_ValueChanged(object sender, EventArgs e)
-        {
-            RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
-            Asignaturas asignatura = new Asignaturas();
-            int id=1;
-            
-            asignatura = repositorio.Buscar(id);
-            if (id == 0)
-            {
-                MessageBox.Show("No hay asignatura registrada");
-                return;
-            }
-            else
-                asignatura = repositorio.Buscar(id);
-            decimal credito = asignatura.Creditos;
-            decimal precio = PrecionumericUpDown.Value;
-            MontonumericUpDown.Value = (asignatura.Creditos * precio);
         }
 
         private void BuscarEstbutton_Click(object sender, EventArgs e)
@@ -352,6 +284,48 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             }
             else
                 ErrorProvider.SetError(IdAsignumericUpDown, "Asignatura  no encontrada");
+        }
+
+        private void Nuevobutton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void Detallebutton_Click_1(object sender, EventArgs e)
+        {
+            List<InscripcionDetalle> detalle = new List<InscripcionDetalle>();
+
+            if (DetalledataGridView.DataSource != null)
+            {
+                detalle = (List<InscripcionDetalle>)DetalledataGridView.DataSource;
+            }
+            if (DetalledataGridView.DataSource != null)
+                detalle = (List<InscripcionDetalle>)DetalledataGridView.DataSource;
+            RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
+
+            Asignaturas asignaturas = BuscarAsignatura((int)IdAsignumericUpDown.Value);
+            this.detalle.Add(
+          new InscripcionDetalle(
+              inscripcionDetalleId: 0,
+              inscripcionId: (int)IdnumericUpDown.Value,
+              asignaturaId: asignaturas.AsignaturaId,
+              subTotal: (asignaturas.Creditos * PrecionumericUpDown.Value)
+              ));
+            CargarGrid();
+            InscripcionDetalle inscripcionD = new InscripcionDetalle();
+            TotaltextBox.Text = inscripcionD.SubTotal.ToString();
+        }
+
+
+        private void CerrarButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Removerbutton_Click(object sender, EventArgs e)
+        {
+            detalle.RemoveAt(DetalledataGridView.CurrentRow.Index);
+            CargarGrid();
         }
     }
 }

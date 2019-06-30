@@ -81,22 +81,22 @@ namespace Parcial2_LeonardoEmil
 
         private void RegistroAsignatura_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new rAsignatura1());
+            AbrirFormInPanel(new rAsignatura());
         }
 
         private void RegistroEstudiante_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new rEstudiantes1());
+            AbrirFormInPanel(new rEstudiantes());
         }
 
         private void RegistroInscripcion_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new rInscripcion1());
+            AbrirFormInPanel(new rInscripcion());
         }
 
         private void RegistroAsignatura_Click_1(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new rAsignatura1());
+            AbrirFormInPanel(new rAsignatura());
         }
     }
 }
