@@ -24,7 +24,6 @@ namespace Parcial2_LeonardoEmil.BLL
                 if (db.Inscripcion.Add(entity) != null)
                 {
                     var estudiante = dbE.Buscar(entity.EstudianteId);
-                 //  entity.CalcularMonto();
                     estudiante.Balance += entity.Monto;
 
                     paso = db.SaveChanges() > 0;
@@ -58,7 +57,7 @@ namespace Parcial2_LeonardoEmil.BLL
 
         }
 
-        public override bool Modificar(Inscripciones entity)
+        public override bool Modificar(Inscripciones inscripcion)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
@@ -67,34 +66,31 @@ namespace Parcial2_LeonardoEmil.BLL
 
             try
             {
-                var estudiante = repositorioEst.Buscar(entity.EstudianteId);
+                var estudiante = repositorioEst.Buscar(inscripcion.EstudianteId);
 
-                var anterior = new RepositorioBase<Inscripciones>().Buscar(entity.InscripcionId);
+           //     var anterior = new RepositorioBase<Inscripciones>().Buscar(inscripcion.InscripcionId);
 
-                estudiante.Balance -= anterior.Monto;
+               // estudiante.Balance -= anterior.Monto;
 
-                foreach(var item in anterior.Detalle)
+                foreach(var item in inscripcion.Detalle)
                 {
-                    if(!entity.Detalle.Any(p => p.InscripcionDetalleId == item.InscripcionDetalleId))
+                    contexto.Estudiante.Find(item.EstudianteId).Balance += item.Monto;
+                    if(!inscripcion.Detalle.ToList().Exists(p => p.InscripcionDetalleId == item.EstudianteId))
                     {
                         contexto.Entry(item).State = EntityState.Deleted;
                     }
                 }
 
-                foreach(var item in entity.Detalle)
+                foreach(var item in inscripcion.Detalle)
                 {
                     if (item.InscripcionDetalleId == 0)
                     {
                         contexto.Entry(item).State = EntityState.Added;
                     }
                     else
-
-                    estudiante.Balance += entity.Monto;
-
-                    repositorioEst.Modificar(estudiante);
-
-                    contexto.Entry(entity).State = EntityState.Modified;
-
+                    {
+                        contexto.Entry(inscripcion).State = EntityState.Modified;
+                    }
                     paso = contexto.SaveChanges() > 0;
                 }
             }
@@ -105,6 +101,7 @@ namespace Parcial2_LeonardoEmil.BLL
             return paso;
         }
 
+    
 
         public static bool Modifica2r(Inscripciones mantenimiento)
         {

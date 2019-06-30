@@ -35,6 +35,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             detalle = new List<InscripcionDetalle>();
         }
 
+
         private void CargarGrid()
         {
             DetalledataGridView.DataSource = null;
@@ -260,11 +261,9 @@ namespace Parcial2_LeonardoEmil.UI.Registro
               detalle = (List<InscripcionDetalle>)DetalledataGridView.DataSource;
             RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
 
-              //  Estudiantes estudiante;
 
             this.detalle.Add(
           new InscripcionDetalle(
-             //id: 0,
               inscripcionDetalleId: 0,
               inscripcionId: (int)IdnumericUpDown.Value,
               estudianteId: (int)IdEstudiantenumericUpDown.Value,
@@ -277,7 +276,6 @@ namespace Parcial2_LeonardoEmil.UI.Registro
         {
           RepositorioBase<Asignaturas>  repositorio = new RepositorioBase<Asignaturas>();
             Asignaturas asignatura = new Asignaturas();
-           // Asignaturas asignatura = new Asignaturas();
             int id=1;
 
             asignatura = repositorio.Buscar(id);
@@ -285,7 +283,6 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             decimal precio = PrecionumericUpDown.Value;
 
             MontonumericUpDown.Value = (asignatura.Creditos * precio);
-            // PrecionumericUpDown.Value;
         }
 
         private void LLenarEstudiante(Estudiantes estudiante)
@@ -304,8 +301,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
         {
             RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
             Asignaturas asignatura = new Asignaturas();
-            // Asignaturas asignatura = new Asignaturas();
-            int id=1;//= Convert.ToInt32(AsignaturacomboBox.SelectedValue);
+            int id=1;
             
             asignatura = repositorio.Buscar(id);
             if (id == 0)
