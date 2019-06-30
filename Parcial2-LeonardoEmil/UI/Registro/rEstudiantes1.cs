@@ -24,7 +24,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             IdnumericUpDown.Value = 0;
             NombretextBox.Text = string.Empty;
             FechadateTimePicker.Value = DateTime.Now;
-            BalancenumericUpDown.Value = 0;
+            BalancetextBox.Text = "0";
             ErrorProvider.Clear();
         }
 
@@ -35,8 +35,8 @@ namespace Parcial2_LeonardoEmil.UI.Registro
                 EstudianteId = (int)(IdnumericUpDown.Value),
                 Nombres = NombretextBox.Text,
                 FechaIngreso = FechadateTimePicker.Value,
-                Balance = BalancenumericUpDown.Value
-            };
+                Balance = 0
+        };
             return estudiante;
         }
 
@@ -45,7 +45,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             IdnumericUpDown.Value = estudiante.EstudianteId;
             NombretextBox.Text = estudiante.Nombres;
             FechadateTimePicker.Value = estudiante.FechaIngreso;
-            BalancenumericUpDown.Value = estudiante.Balance;
+            BalancetextBox.Text = estudiante.Balance.ToString();
         }
 
         private bool ExisteEnLaBaseDeDatos()
@@ -126,7 +126,20 @@ namespace Parcial2_LeonardoEmil.UI.Registro
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
+            RepositorioBase<Estudiantes> repositorio = new RepositorioBase<Estudiantes>();
+            ErrorProvider.Clear();
+            int.TryParse(IdnumericUpDown.Text, out int id);
 
+            if (!ExisteEnLaBaseDeDatos())
+            {
+                ErrorProvider.SetError(IdnumericUpDown, "Estudiante No Existe!!!");
+                return;
+            }
+            if (repositorio.Eliminar(id))
+            {
+                Limpiar();
+                MessageBox.Show("Estudiante Eliminado!!", "Exito!!!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)

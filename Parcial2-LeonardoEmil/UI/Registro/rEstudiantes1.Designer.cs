@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.BalancenumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.NombretextBox = new System.Windows.Forms.TextBox();
             this.Buscarbutton = new System.Windows.Forms.Button();
@@ -43,42 +42,29 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.BalancenumericUpDown)).BeginInit();
+            this.BalancetextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
-            // BalancenumericUpDown
-            // 
-            this.BalancenumericUpDown.Enabled = false;
-            this.BalancenumericUpDown.Location = new System.Drawing.Point(350, 245);
-            this.BalancenumericUpDown.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.BalancenumericUpDown.Name = "BalancenumericUpDown";
-            this.BalancenumericUpDown.Size = new System.Drawing.Size(80, 20);
-            this.BalancenumericUpDown.TabIndex = 23;
-            // 
             // FechadateTimePicker
             // 
             this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FechadateTimePicker.Location = new System.Drawing.Point(350, 203);
+            this.FechadateTimePicker.Location = new System.Drawing.Point(382, 226);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
             this.FechadateTimePicker.Size = new System.Drawing.Size(135, 20);
             this.FechadateTimePicker.TabIndex = 22;
             // 
             // NombretextBox
             // 
-            this.NombretextBox.Location = new System.Drawing.Point(350, 160);
+            this.NombretextBox.Location = new System.Drawing.Point(382, 183);
             this.NombretextBox.Name = "NombretextBox";
             this.NombretextBox.Size = new System.Drawing.Size(135, 20);
             this.NombretextBox.TabIndex = 21;
             // 
             // Buscarbutton
             // 
-            this.Buscarbutton.Location = new System.Drawing.Point(396, 112);
+            this.Buscarbutton.Location = new System.Drawing.Point(428, 135);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(75, 23);
             this.Buscarbutton.TabIndex = 20;
@@ -88,14 +74,14 @@
             // 
             // IdnumericUpDown
             // 
-            this.IdnumericUpDown.Location = new System.Drawing.Point(296, 112);
+            this.IdnumericUpDown.Location = new System.Drawing.Point(328, 135);
             this.IdnumericUpDown.Name = "IdnumericUpDown";
             this.IdnumericUpDown.Size = new System.Drawing.Size(80, 20);
             this.IdnumericUpDown.TabIndex = 19;
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Location = new System.Drawing.Point(453, 315);
+            this.Eliminarbutton.Location = new System.Drawing.Point(485, 338);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(75, 23);
             this.Eliminarbutton.TabIndex = 18;
@@ -105,7 +91,7 @@
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.Location = new System.Drawing.Point(275, 315);
+            this.Nuevobutton.Location = new System.Drawing.Point(307, 338);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 23);
             this.Nuevobutton.TabIndex = 17;
@@ -115,7 +101,7 @@
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(372, 315);
+            this.Guardarbutton.Location = new System.Drawing.Point(404, 338);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 23);
             this.Guardarbutton.TabIndex = 16;
@@ -126,7 +112,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(272, 247);
+            this.label4.Location = new System.Drawing.Point(304, 270);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 13);
             this.label4.TabIndex = 15;
@@ -135,7 +121,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(272, 209);
+            this.label3.Location = new System.Drawing.Point(304, 232);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 14;
@@ -144,7 +130,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(272, 163);
+            this.label2.Location = new System.Drawing.Point(304, 186);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 13;
@@ -153,7 +139,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(272, 119);
+            this.label1.Location = new System.Drawing.Point(304, 142);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 12;
@@ -163,7 +149,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Monotype Corsiva", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(268, 38);
+            this.label5.Location = new System.Drawing.Point(300, 61);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(232, 37);
             this.label5.TabIndex = 24;
@@ -173,13 +159,21 @@
             // 
             this.ErrorProvider.ContainerControl = this;
             // 
+            // BalancetextBox
+            // 
+            this.BalancetextBox.Location = new System.Drawing.Point(382, 267);
+            this.BalancetextBox.Name = "BalancetextBox";
+            this.BalancetextBox.ReadOnly = true;
+            this.BalancetextBox.Size = new System.Drawing.Size(100, 20);
+            this.BalancetextBox.TabIndex = 25;
+            // 
             // rEstudiantes1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BalancetextBox);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.BalancenumericUpDown);
             this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.NombretextBox);
             this.Controls.Add(this.Buscarbutton);
@@ -194,7 +188,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "rEstudiantes1";
             this.Text = "rEstudiantes1";
-            ((System.ComponentModel.ISupportInitialize)(this.BalancenumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
             this.ResumeLayout(false);
@@ -203,8 +196,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.NumericUpDown BalancenumericUpDown;
         private System.Windows.Forms.DateTimePicker FechadateTimePicker;
         private System.Windows.Forms.TextBox NombretextBox;
         private System.Windows.Forms.Button Buscarbutton;
@@ -218,5 +209,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ErrorProvider ErrorProvider;
+        private System.Windows.Forms.TextBox BalancetextBox;
     }
 }

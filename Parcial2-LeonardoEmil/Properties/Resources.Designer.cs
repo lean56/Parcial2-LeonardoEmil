@@ -63,6 +63,26 @@ namespace Parcial2_LeonardoEmil.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap folder_my_documents_15435 {
+            get {
+                object obj = ResourceManager.GetObject("folder_my_documents_15435", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_menu_128_28650 {
+            get {
+                object obj = ResourceManager.GetObject("ic_menu_128_28650", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_cerrar2 {
             get {
                 object obj = ResourceManager.GetObject("icon cerrar2", resourceCulture);
@@ -136,6 +156,26 @@ namespace Parcial2_LeonardoEmil.Properties {
         internal static System.Drawing.Bitmap Mobile_Menu_Icon2 {
             get {
                 object obj = ResourceManager.GetObject("Mobile-Menu-Icon2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Student_id_35758 {
+            get {
+                object obj = ResourceManager.GetObject("Student-id_35758", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap travel_journey_icon_icons_com_55995 {
+            get {
+                object obj = ResourceManager.GetObject("travel_journey_icon-icons.com_55995", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
