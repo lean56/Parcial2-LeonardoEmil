@@ -207,7 +207,11 @@ namespace Parcial2_LeonardoEmil.UI.Registro
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
+            InscripcionBLL db = new InscripcionBLL();
+
             RepositorioBase<Inscripciones> repositorio = new RepositorioBase<Inscripciones>();
+
+
             ErrorProvider.Clear();
             int.TryParse(IdnumericUpDown.Text, out int id);
 
@@ -216,7 +220,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
                 ErrorProvider.SetError(IdnumericUpDown, "Inscripcion no existe!!!");
                 return;
             }
-            if (repositorio.Eliminar(id))
+            if (db.Eliminar(id))
             {
                 Limpiar();
                 MessageBox.Show("Inscripcion Eliminada!!", "Exito!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);

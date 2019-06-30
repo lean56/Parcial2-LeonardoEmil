@@ -101,20 +101,17 @@ namespace Parcial2_LeonardoEmil.BLL
         public override bool Eliminar(int id)
         {
             bool paso = false;
-            Contexto db = new Contexto();
+            Contexto contexto = new Contexto();
             RepositorioBase<Estudiantes> repositorioEst = new RepositorioBase<Estudiantes>();
             try
             {
-                var Inscripcion = db.Inscripcion.Find(id);
-                var estudiante = repositorioEst.Buscar(Inscripcion.EstudianteId);
+                Inscripciones inscripcion = contexto.Inscripcion.Find(id); //Todo: buscar id de inscripcion
 
-                estudiante.Balance = estudiante.Balance - Inscripcion.Monto;
+                contexto.Estudiante.Find(inscripcion.EstudianteId).Balance -= inscripcion.Monto; //buscar el id del estudiante en la inscripcion para rebajarle el balance eliminado
 
-                repositorioEst.Modificar(estudiante);
-
-                db.Entry(Inscripcion).State = EntityState.Deleted;
-
-                paso = (db.SaveChanges() > 0);
+                contexto.Inscripcion.Remove(inscripcion); //eliminar inscripcion
+             
+                paso = (contexto.SaveChanges() > 0);
             }
             catch (Exception)
             {
@@ -122,7 +119,7 @@ namespace Parcial2_LeonardoEmil.BLL
             }
             finally
             {
-                db.Dispose();
+                contexto.Dispose();
             }
             return paso;
         }
