@@ -43,6 +43,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.BalancetextBox = new System.Windows.Forms.TextBox();
+            this.CerrarButton = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -167,11 +168,24 @@
             this.BalancetextBox.Size = new System.Drawing.Size(100, 20);
             this.BalancetextBox.TabIndex = 25;
             // 
+            // CerrarButton
+            // 
+            this.CerrarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CerrarButton.AutoSize = true;
+            this.CerrarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CerrarButton.Location = new System.Drawing.Point(771, 9);
+            this.CerrarButton.Name = "CerrarButton";
+            this.CerrarButton.Size = new System.Drawing.Size(17, 17);
+            this.CerrarButton.TabIndex = 59;
+            this.CerrarButton.Text = "X";
+            this.CerrarButton.Click += new System.EventHandler(this.CerrarButton_Click);
+            // 
             // rEstudiantes1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.CerrarButton);
             this.Controls.Add(this.BalancetextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.FechadateTimePicker);
@@ -210,5 +224,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ErrorProvider ErrorProvider;
         private System.Windows.Forms.TextBox BalancetextBox;
+        private System.Windows.Forms.Label CerrarButton;
     }
 }

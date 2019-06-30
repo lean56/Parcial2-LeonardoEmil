@@ -57,7 +57,7 @@
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 0);
             this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(176, 529);
+            this.MenuVertical.Size = new System.Drawing.Size(176, 580);
             this.MenuVertical.TabIndex = 0;
             // 
             // BarraTitulo
@@ -71,7 +71,7 @@
             this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.BarraTitulo.Location = new System.Drawing.Point(176, 0);
             this.BarraTitulo.Name = "BarraTitulo";
-            this.BarraTitulo.Size = new System.Drawing.Size(774, 50);
+            this.BarraTitulo.Size = new System.Drawing.Size(794, 50);
             this.BarraTitulo.TabIndex = 1;
             this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
             // 
@@ -81,14 +81,14 @@
             this.PanelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelContenedor.Location = new System.Drawing.Point(176, 50);
             this.PanelContenedor.Name = "PanelContenedor";
-            this.PanelContenedor.Size = new System.Drawing.Size(774, 479);
+            this.PanelContenedor.Size = new System.Drawing.Size(794, 530);
             this.PanelContenedor.TabIndex = 2;
             // 
             // restaurar
             // 
             this.restaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.restaurar.Image = global::Parcial2_LeonardoEmil.Properties.Resources.icon_restaurar;
-            this.restaurar.Location = new System.Drawing.Point(702, 9);
+            this.restaurar.Location = new System.Drawing.Point(722, 9);
             this.restaurar.Name = "restaurar";
             this.restaurar.Size = new System.Drawing.Size(30, 30);
             this.restaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -100,7 +100,7 @@
             // 
             this.min.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.min.Image = global::Parcial2_LeonardoEmil.Properties.Resources.icon_minimizar1;
-            this.min.Location = new System.Drawing.Point(666, 9);
+            this.min.Location = new System.Drawing.Point(686, 9);
             this.min.Name = "min";
             this.min.Size = new System.Drawing.Size(30, 30);
             this.min.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -112,7 +112,7 @@
             // 
             this.Max.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Max.Image = global::Parcial2_LeonardoEmil.Properties.Resources.icon_maximizar;
-            this.Max.Location = new System.Drawing.Point(702, 9);
+            this.Max.Location = new System.Drawing.Point(722, 9);
             this.Max.Name = "Max";
             this.Max.Size = new System.Drawing.Size(30, 30);
             this.Max.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -124,7 +124,7 @@
             // 
             this.Salir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Salir.Image = global::Parcial2_LeonardoEmil.Properties.Resources.icon_cerrar2;
-            this.Salir.Location = new System.Drawing.Point(738, 9);
+            this.Salir.Location = new System.Drawing.Point(758, 9);
             this.Salir.Name = "Salir";
             this.Salir.Size = new System.Drawing.Size(30, 30);
             this.Salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -203,7 +203,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(950, 529);
+            this.ClientSize = new System.Drawing.Size(970, 580);
             this.Controls.Add(this.PanelContenedor);
             this.Controls.Add(this.BarraTitulo);
             this.Controls.Add(this.MenuVertical);
@@ -225,7 +225,6 @@
 
         private System.Windows.Forms.Panel MenuVertical;
         private System.Windows.Forms.Panel BarraTitulo;
-        private System.Windows.Forms.Panel PanelContenedor;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox restaurar;
         private System.Windows.Forms.PictureBox min;
@@ -235,5 +234,6 @@
         private System.Windows.Forms.Button RegistroEstudiante;
         private System.Windows.Forms.Button RegistroInscripcion;
         private System.Windows.Forms.Button RegistroAsignatura;
+        public System.Windows.Forms.Panel PanelContenedor;
     }
 }

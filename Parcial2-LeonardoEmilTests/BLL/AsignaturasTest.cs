@@ -32,8 +32,8 @@ namespace Parcial2_LeonardoEmil.BLL.Tests
             {
                 InscripcionDetalleId = 1,
                 InscripcionId = 1,
-                EstudianteId = 1,
-                Monto = 1000
+                //EstudianteId = 1,
+                //Monto = 1000
         };
             
 

@@ -152,5 +152,10 @@ namespace Parcial2_LeonardoEmil.UI.Registro
                 MessageBox.Show("Asignatura Eliminada!!", "Exito!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void CerrarButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

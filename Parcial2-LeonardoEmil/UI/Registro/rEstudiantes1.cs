@@ -148,5 +148,10 @@ namespace Parcial2_LeonardoEmil.UI.Registro
         {
             Limpiar();
         }
+
+        private void CerrarButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

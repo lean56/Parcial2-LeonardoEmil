@@ -195,5 +195,29 @@
   <ItemGroup>
     <None Include="Resources\ic_menu_128_28650.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addthelist_añadir_3477.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addthelist_añadir_3477 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searchmagnifierinterfacesymbol1_79893.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searchmagnifierinterfacesymbol1_798931.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preview_search_find_locate_1551.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifier-1_icon-icons.com_56924.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifier-1_icon-icons.com_569241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searchmagnifierinterfacesymbol1_798932.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

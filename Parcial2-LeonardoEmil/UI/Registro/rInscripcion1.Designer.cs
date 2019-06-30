@@ -29,25 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rInscripcion1));
             this.label8 = new System.Windows.Forms.Label();
             this.DescripciontextBox = new System.Windows.Forms.TextBox();
-            this.BuscarAsignbutton = new System.Windows.Forms.Button();
             this.IdAsignumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.BuscarEstbutton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.NombretextBox = new System.Windows.Forms.TextBox();
             this.IdEstudiantenumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.PrecionumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
-            this.detalleButton = new System.Windows.Forms.Label();
             this.DetalledataGridView = new System.Windows.Forms.DataGridView();
-            this.addAsignatura = new System.Windows.Forms.Label();
-            this.addEstudiante = new System.Windows.Forms.Label();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
-            this.Buscarbutton = new System.Windows.Forms.Button();
-            this.MontonumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,19 +52,26 @@
             this.label9 = new System.Windows.Forms.Label();
             this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.TotaltextBox = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Detallebutton = new System.Windows.Forms.Button();
+            this.BuscarAsignbutton = new System.Windows.Forms.Button();
+            this.BuscarEstbutton = new System.Windows.Forms.Button();
+            this.Buscarbutton = new System.Windows.Forms.Button();
+            this.CerrarButton = new System.Windows.Forms.Label();
+            this.Removerbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.IdAsignumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IdEstudiantenumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MontonumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(405, 257);
+            this.label8.Location = new System.Drawing.Point(127, 27);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(63, 13);
             this.label8.TabIndex = 53;
@@ -78,24 +79,15 @@
             // 
             // DescripciontextBox
             // 
-            this.DescripciontextBox.Location = new System.Drawing.Point(478, 253);
+            this.DescripciontextBox.Location = new System.Drawing.Point(196, 24);
             this.DescripciontextBox.Name = "DescripciontextBox";
+            this.DescripciontextBox.ReadOnly = true;
             this.DescripciontextBox.Size = new System.Drawing.Size(100, 20);
             this.DescripciontextBox.TabIndex = 52;
             // 
-            // BuscarAsignbutton
-            // 
-            this.BuscarAsignbutton.Location = new System.Drawing.Point(343, 251);
-            this.BuscarAsignbutton.Name = "BuscarAsignbutton";
-            this.BuscarAsignbutton.Size = new System.Drawing.Size(43, 23);
-            this.BuscarAsignbutton.TabIndex = 51;
-            this.BuscarAsignbutton.Text = "Buscar";
-            this.BuscarAsignbutton.UseVisualStyleBackColor = true;
-            this.BuscarAsignbutton.Click += new System.EventHandler(this.BuscarAsignbutton_Click);
-            // 
             // IdAsignumericUpDown
             // 
-            this.IdAsignumericUpDown.Location = new System.Drawing.Point(273, 254);
+            this.IdAsignumericUpDown.Location = new System.Drawing.Point(26, 23);
             this.IdAsignumericUpDown.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -104,16 +96,6 @@
             this.IdAsignumericUpDown.Name = "IdAsignumericUpDown";
             this.IdAsignumericUpDown.Size = new System.Drawing.Size(64, 20);
             this.IdAsignumericUpDown.TabIndex = 50;
-            // 
-            // BuscarEstbutton
-            // 
-            this.BuscarEstbutton.Location = new System.Drawing.Point(419, 107);
-            this.BuscarEstbutton.Name = "BuscarEstbutton";
-            this.BuscarEstbutton.Size = new System.Drawing.Size(63, 23);
-            this.BuscarEstbutton.TabIndex = 49;
-            this.BuscarEstbutton.Text = "Buscar";
-            this.BuscarEstbutton.UseVisualStyleBackColor = true;
-            this.BuscarEstbutton.Click += new System.EventHandler(this.BuscarEstbutton_Click);
             // 
             // label7
             // 
@@ -128,6 +110,7 @@
             // 
             this.NombretextBox.Location = new System.Drawing.Point(311, 136);
             this.NombretextBox.Name = "NombretextBox";
+            this.NombretextBox.ReadOnly = true;
             this.NombretextBox.Size = new System.Drawing.Size(100, 20);
             this.NombretextBox.TabIndex = 47;
             // 
@@ -159,48 +142,17 @@
             this.label6.TabIndex = 44;
             this.label6.Text = "Precio";
             // 
-            // detalleButton
-            // 
-            this.detalleButton.AutoSize = true;
-            this.detalleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detalleButton.Location = new System.Drawing.Point(541, 292);
-            this.detalleButton.Name = "detalleButton";
-            this.detalleButton.Size = new System.Drawing.Size(18, 20);
-            this.detalleButton.TabIndex = 43;
-            this.detalleButton.Text = "+";
-            this.detalleButton.Click += new System.EventHandler(this.detalleButton_Click);
-            // 
             // DetalledataGridView
             // 
             this.DetalledataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DetalledataGridView.Location = new System.Drawing.Point(255, 292);
+            this.DetalledataGridView.Location = new System.Drawing.Point(14, 56);
             this.DetalledataGridView.Name = "DetalledataGridView";
-            this.DetalledataGridView.Size = new System.Drawing.Size(203, 70);
+            this.DetalledataGridView.Size = new System.Drawing.Size(328, 105);
             this.DetalledataGridView.TabIndex = 42;
-            // 
-            // addAsignatura
-            // 
-            this.addAsignatura.AutoSize = true;
-            this.addAsignatura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addAsignatura.Location = new System.Drawing.Point(388, 253);
-            this.addAsignatura.Name = "addAsignatura";
-            this.addAsignatura.Size = new System.Drawing.Size(18, 20);
-            this.addAsignatura.TabIndex = 41;
-            this.addAsignatura.Text = "+";
-            // 
-            // addEstudiante
-            // 
-            this.addEstudiante.AutoSize = true;
-            this.addEstudiante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addEstudiante.Location = new System.Drawing.Point(499, 109);
-            this.addEstudiante.Name = "addEstudiante";
-            this.addEstudiante.Size = new System.Drawing.Size(18, 20);
-            this.addEstudiante.TabIndex = 40;
-            this.addEstudiante.Text = "+";
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Location = new System.Drawing.Point(437, 402);
+            this.Eliminarbutton.Location = new System.Drawing.Point(440, 490);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(75, 23);
             this.Eliminarbutton.TabIndex = 39;
@@ -210,7 +162,7 @@
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(344, 402);
+            this.Guardarbutton.Location = new System.Drawing.Point(347, 490);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 23);
             this.Guardarbutton.TabIndex = 38;
@@ -220,7 +172,7 @@
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.Location = new System.Drawing.Point(254, 402);
+            this.Nuevobutton.Location = new System.Drawing.Point(257, 490);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 23);
             this.Nuevobutton.TabIndex = 37;
@@ -228,37 +180,14 @@
             this.Nuevobutton.UseVisualStyleBackColor = true;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
-            // Buscarbutton
-            // 
-            this.Buscarbutton.Location = new System.Drawing.Point(400, 64);
-            this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(75, 23);
-            this.Buscarbutton.TabIndex = 36;
-            this.Buscarbutton.Text = "Buscar";
-            this.Buscarbutton.UseVisualStyleBackColor = true;
-            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
-            // 
-            // MontonumericUpDown
-            // 
-            this.MontonumericUpDown.Location = new System.Drawing.Point(392, 376);
-            this.MontonumericUpDown.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.MontonumericUpDown.Name = "MontonumericUpDown";
-            this.MontonumericUpDown.ReadOnly = true;
-            this.MontonumericUpDown.Size = new System.Drawing.Size(100, 20);
-            this.MontonumericUpDown.TabIndex = 35;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(237, 256);
+            this.label5.Location = new System.Drawing.Point(6, 25);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 13);
+            this.label5.Size = new System.Drawing.Size(18, 13);
             this.label5.TabIndex = 34;
-            this.label5.Text = "ID_A";
+            this.label5.Text = "ID";
             // 
             // label4
             // 
@@ -281,11 +210,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(323, 376);
+            this.label2.Location = new System.Drawing.Point(202, 170);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.Size = new System.Drawing.Size(34, 13);
             this.label2.TabIndex = 31;
-            this.label2.Text = "Monto";
+            this.label2.Text = "Total:";
             // 
             // IdnumericUpDown
             // 
@@ -327,41 +256,116 @@
             // 
             // TotaltextBox
             // 
-            this.TotaltextBox.Location = new System.Drawing.Point(503, 341);
+            this.TotaltextBox.Location = new System.Drawing.Point(242, 166);
             this.TotaltextBox.Name = "TotaltextBox";
+            this.TotaltextBox.ReadOnly = true;
             this.TotaltextBox.Size = new System.Drawing.Size(100, 20);
             this.TotaltextBox.TabIndex = 55;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.TotaltextBox);
+            this.groupBox1.Controls.Add(this.Detallebutton);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.DetalledataGridView);
+            this.groupBox1.Controls.Add(this.IdAsignumericUpDown);
+            this.groupBox1.Controls.Add(this.DescripciontextBox);
+            this.groupBox1.Controls.Add(this.BuscarAsignbutton);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(232, 247);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(377, 192);
+            this.groupBox1.TabIndex = 57;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Asignatura";
+            // 
+            // Detallebutton
+            // 
+            this.Detallebutton.Image = global::Parcial2_LeonardoEmil.Properties.Resources.addthelist_añadir_3477__1_;
+            this.Detallebutton.Location = new System.Drawing.Point(302, 10);
+            this.Detallebutton.Name = "Detallebutton";
+            this.Detallebutton.Size = new System.Drawing.Size(49, 43);
+            this.Detallebutton.TabIndex = 56;
+            this.Detallebutton.UseVisualStyleBackColor = true;
+            this.Detallebutton.Click += new System.EventHandler(this.Detallebutton_Click_1);
+            // 
+            // BuscarAsignbutton
+            // 
+            this.BuscarAsignbutton.Image = global::Parcial2_LeonardoEmil.Properties.Resources.searchmagnifierinterfacesymbol1_798931;
+            this.BuscarAsignbutton.Location = new System.Drawing.Point(94, 21);
+            this.BuscarAsignbutton.Name = "BuscarAsignbutton";
+            this.BuscarAsignbutton.Size = new System.Drawing.Size(27, 25);
+            this.BuscarAsignbutton.TabIndex = 51;
+            this.BuscarAsignbutton.UseVisualStyleBackColor = true;
+            this.BuscarAsignbutton.Click += new System.EventHandler(this.BuscarAsignbutton_Click);
+            // 
+            // BuscarEstbutton
+            // 
+            this.BuscarEstbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BuscarEstbutton.Image = global::Parcial2_LeonardoEmil.Properties.Resources.searchmagnifierinterfacesymbol1_798932;
+            this.BuscarEstbutton.Location = new System.Drawing.Point(432, 105);
+            this.BuscarEstbutton.Name = "BuscarEstbutton";
+            this.BuscarEstbutton.Size = new System.Drawing.Size(23, 27);
+            this.BuscarEstbutton.TabIndex = 49;
+            this.BuscarEstbutton.UseVisualStyleBackColor = true;
+            this.BuscarEstbutton.Click += new System.EventHandler(this.BuscarEstbutton_Click);
+            // 
+            // Buscarbutton
+            // 
+            this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Buscarbutton.Image = global::Parcial2_LeonardoEmil.Properties.Resources.preview_search_find_locate_1551;
+            this.Buscarbutton.Location = new System.Drawing.Point(419, 59);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(36, 37);
+            this.Buscarbutton.TabIndex = 36;
+            this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            // 
+            // CerrarButton
+            // 
+            this.CerrarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CerrarButton.AutoSize = true;
+            this.CerrarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CerrarButton.Location = new System.Drawing.Point(788, 9);
+            this.CerrarButton.Name = "CerrarButton";
+            this.CerrarButton.Size = new System.Drawing.Size(17, 17);
+            this.CerrarButton.TabIndex = 58;
+            this.CerrarButton.Text = "X";
+            this.CerrarButton.Click += new System.EventHandler(this.CerrarButton_Click);
+            // 
+            // Removerbutton
+            // 
+            this.Removerbutton.Image = ((System.Drawing.Image)(resources.GetObject("Removerbutton.Image")));
+            this.Removerbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Removerbutton.Location = new System.Drawing.Point(232, 445);
+            this.Removerbutton.Name = "Removerbutton";
+            this.Removerbutton.Size = new System.Drawing.Size(114, 23);
+            this.Removerbutton.TabIndex = 60;
+            this.Removerbutton.Text = "- Remover Fila";
+            this.Removerbutton.Click += new System.EventHandler(this.Removerbutton_Click);
             // 
             // rInscripcion1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.TotaltextBox);
+            this.ClientSize = new System.Drawing.Size(826, 540);
+            this.Controls.Add(this.Removerbutton);
+            this.Controls.Add(this.CerrarButton);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.DescripciontextBox);
-            this.Controls.Add(this.BuscarAsignbutton);
-            this.Controls.Add(this.IdAsignumericUpDown);
             this.Controls.Add(this.BuscarEstbutton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.NombretextBox);
             this.Controls.Add(this.IdEstudiantenumericUpDown);
             this.Controls.Add(this.PrecionumericUpDown);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.detalleButton);
-            this.Controls.Add(this.DetalledataGridView);
-            this.Controls.Add(this.addAsignatura);
-            this.Controls.Add(this.addEstudiante);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Buscarbutton);
-            this.Controls.Add(this.MontonumericUpDown);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.IdnumericUpDown);
             this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.label1);
@@ -372,9 +376,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.IdEstudiantenumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MontonumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,15 +397,11 @@
         private System.Windows.Forms.NumericUpDown IdEstudiantenumericUpDown;
         private System.Windows.Forms.NumericUpDown PrecionumericUpDown;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label detalleButton;
         private System.Windows.Forms.DataGridView DetalledataGridView;
-        private System.Windows.Forms.Label addAsignatura;
-        private System.Windows.Forms.Label addEstudiante;
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button Buscarbutton;
-        public System.Windows.Forms.NumericUpDown MontonumericUpDown;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -411,5 +412,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ErrorProvider ErrorProvider;
         private System.Windows.Forms.TextBox TotaltextBox;
+        private System.Windows.Forms.Button Detallebutton;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label CerrarButton;
+        private System.Windows.Forms.Button Removerbutton;
     }
 }

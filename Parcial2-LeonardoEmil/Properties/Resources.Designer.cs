@@ -63,6 +63,26 @@ namespace Parcial2_LeonardoEmil.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap addthelist_añadir_3477 {
+            get {
+                object obj = ResourceManager.GetObject("addthelist_añadir_3477", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap addthelist_añadir_3477__1_ {
+            get {
+                object obj = ResourceManager.GetObject("addthelist_añadir_3477 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap folder_my_documents_15435 {
             get {
                 object obj = ResourceManager.GetObject("folder_my_documents_15435", resourceCulture);
@@ -133,6 +153,26 @@ namespace Parcial2_LeonardoEmil.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap magnifier_1_icon_icons_com_56924 {
+            get {
+                object obj = ResourceManager.GetObject("magnifier-1_icon-icons.com_56924", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap magnifier_1_icon_icons1 {
+            get {
+                object obj = ResourceManager.GetObject("magnifier-1_icon-icons1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Mobile_Menu_Icon {
             get {
                 object obj = ResourceManager.GetObject("Mobile-Menu-Icon", resourceCulture);
@@ -156,6 +196,46 @@ namespace Parcial2_LeonardoEmil.Properties {
         internal static System.Drawing.Bitmap Mobile_Menu_Icon2 {
             get {
                 object obj = ResourceManager.GetObject("Mobile-Menu-Icon2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap preview_search_find_locate_1551 {
+            get {
+                object obj = ResourceManager.GetObject("preview_search_find_locate_1551", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap searchmagnifierinterfacesymbol1_79893 {
+            get {
+                object obj = ResourceManager.GetObject("searchmagnifierinterfacesymbol1_79893", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap searchmagnifierinterfacesymbol1_798931 {
+            get {
+                object obj = ResourceManager.GetObject("searchmagnifierinterfacesymbol1_798931", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap searchmagnifierinterfacesymbol1_798932 {
+            get {
+                object obj = ResourceManager.GetObject("searchmagnifierinterfacesymbol1_798932", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -31,7 +31,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             DescripciontextBox.Text = string.Empty;
             FechadateTimePicker.Value = DateTime.Now;
             PrecionumericUpDown.Value = 0;
-            MontonumericUpDown.Value = 0;
+            TotaltextBox.Text = "0.00";
             detalle = new List<InscripcionDetalle>();
             ErrorProvider.Clear();
         }
@@ -64,7 +64,6 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             IdEstudiantenumericUpDown.Value = inscripcion.EstudianteId;
             IdAsignumericUpDown.Value = inscripcion.AsignaturaId;
             FechadateTimePicker.Value = inscripcion.Fecha;
-            MontonumericUpDown.Value = inscripcion.Monto;
             inscripcion.CalcularMonto();
             TotaltextBox.Text = inscripcion.Monto.ToString();
             detalle = new List<InscripcionDetalle>();
@@ -249,29 +248,6 @@ namespace Parcial2_LeonardoEmil.UI.Registro
                 ErrorProvider.SetError(IdnumericUpDown, "Inscripcion  no encontrada");
         }
 
-        private void detalleButton_Click(object sender, EventArgs e)
-        {
-            List<InscripcionDetalle> detalle = new List<InscripcionDetalle>();
-
-            if (DetalledataGridView.DataSource != null)
-            {
-                detalle = (List<InscripcionDetalle>)DetalledataGridView.DataSource;
-            }
-            if (DetalledataGridView.DataSource != null)
-                detalle = (List<InscripcionDetalle>)DetalledataGridView.DataSource;
-            RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
-
-            Asignaturas asignaturas = BuscarAsignatura((int)IdAsignumericUpDown.Value);
-            this.detalle.Add(
-          new InscripcionDetalle(
-              inscripcionDetalleId: 0,
-              inscripcionId: (int)IdnumericUpDown.Value,
-              asignaturaId: asignaturas.AsignaturaId,
-              subTotal: (asignaturas.Creditos * PrecionumericUpDown.Value)
-              ));
-            CargarGrid();
-        }
-
         private void BuscarEstbutton_Click(object sender, EventArgs e)
         {
             RepositorioBase<Estudiantes> repositorio = new RepositorioBase<Estudiantes>();
@@ -313,6 +289,43 @@ namespace Parcial2_LeonardoEmil.UI.Registro
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        private void Detallebutton_Click_1(object sender, EventArgs e)
+        {
+            List<InscripcionDetalle> detalle = new List<InscripcionDetalle>();
+
+            if (DetalledataGridView.DataSource != null)
+            {
+                detalle = (List<InscripcionDetalle>)DetalledataGridView.DataSource;
+            }
+            if (DetalledataGridView.DataSource != null)
+                detalle = (List<InscripcionDetalle>)DetalledataGridView.DataSource;
+            RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
+
+            Asignaturas asignaturas = BuscarAsignatura((int)IdAsignumericUpDown.Value);
+            this.detalle.Add(
+          new InscripcionDetalle(
+              inscripcionDetalleId: 0,
+              inscripcionId: (int)IdnumericUpDown.Value,
+              asignaturaId: asignaturas.AsignaturaId,
+              subTotal: (asignaturas.Creditos * PrecionumericUpDown.Value)
+              ));
+            CargarGrid();
+            InscripcionDetalle inscripcionD = new InscripcionDetalle();
+            TotaltextBox.Text = inscripcionD.SubTotal.ToString();
+        }
+
+
+        private void CerrarButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Removerbutton_Click(object sender, EventArgs e)
+        {
+            detalle.RemoveAt(DetalledataGridView.CurrentRow.Index);
+            CargarGrid();
         }
     }
 }
