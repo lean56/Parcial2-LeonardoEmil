@@ -63,6 +63,26 @@ namespace Parcial2_LeonardoEmil.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _01_16_86396 {
+            get {
+                object obj = ResourceManager.GetObject("01-16_86396", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _01_16_863961 {
+            get {
+                object obj = ResourceManager.GetObject("01-16_863961", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap addthelist_añadir_3477 {
             get {
                 object obj = ResourceManager.GetObject("addthelist_añadir_3477", resourceCulture);
@@ -76,6 +96,16 @@ namespace Parcial2_LeonardoEmil.Properties {
         internal static System.Drawing.Bitmap addthelist_añadir_3477__1_ {
             get {
                 object obj = ResourceManager.GetObject("addthelist_añadir_3477 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap find_search_card_user_16713 {
+            get {
+                object obj = ResourceManager.GetObject("find_search_card_user_16713", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
