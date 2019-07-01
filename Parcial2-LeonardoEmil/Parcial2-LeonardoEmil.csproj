@@ -213,5 +213,23 @@
   <ItemGroup>
     <None Include="Resources\01-16_863961.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_find_user_16727.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_locate_find_icon-icons.com_67287.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_locate_find_icon-icons.com_672871.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file_new_22051.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_21411.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\action_exit_close_remove_13915.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

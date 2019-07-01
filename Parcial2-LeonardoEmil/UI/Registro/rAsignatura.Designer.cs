@@ -42,9 +42,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.CerrarButton = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreditonumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -62,41 +67,45 @@
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Location = new System.Drawing.Point(464, 276);
+            this.Eliminarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Eliminarbutton.Image = global::Parcial2_LeonardoEmil.Properties.Resources.action_exit_close_remove_13915;
+            this.Eliminarbutton.Location = new System.Drawing.Point(183, 19);
             this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Eliminarbutton.Size = new System.Drawing.Size(75, 50);
             this.Eliminarbutton.TabIndex = 19;
-            this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.UseVisualStyleBackColor = true;
             this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(383, 276);
+            this.Guardarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Guardarbutton.Image = global::Parcial2_LeonardoEmil.Properties.Resources.save_21411;
+            this.Guardarbutton.Location = new System.Drawing.Point(102, 19);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Guardarbutton.Size = new System.Drawing.Size(75, 50);
             this.Guardarbutton.TabIndex = 18;
-            this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.UseVisualStyleBackColor = true;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.Location = new System.Drawing.Point(300, 276);
+            this.Nuevobutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Nuevobutton.Image = global::Parcial2_LeonardoEmil.Properties.Resources.file_new_22051;
+            this.Nuevobutton.Location = new System.Drawing.Point(19, 19);
             this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(75, 23);
+            this.Nuevobutton.Size = new System.Drawing.Size(75, 50);
             this.Nuevobutton.TabIndex = 17;
-            this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.UseVisualStyleBackColor = true;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // Buscarbutton
             // 
-            this.Buscarbutton.Location = new System.Drawing.Point(452, 158);
+            this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Buscarbutton.Image = global::Parcial2_LeonardoEmil.Properties.Resources.search_locate_find_icon_icons_com_67287;
+            this.Buscarbutton.Location = new System.Drawing.Point(458, 151);
             this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Buscarbutton.Size = new System.Drawing.Size(38, 37);
             this.Buscarbutton.TabIndex = 16;
-            this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
@@ -178,15 +187,55 @@
             this.CerrarButton.Text = "X";
             this.CerrarButton.Click += new System.EventHandler(this.CerrarButton_Click);
             // 
-            // rAsignatura1
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.Nuevobutton);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.Guardarbutton);
+            this.groupBox1.Controls.Add(this.Eliminarbutton);
+            this.groupBox1.Location = new System.Drawing.Point(301, 270);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(279, 87);
+            this.groupBox1.TabIndex = 60;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Botones";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(203, 71);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(43, 13);
+            this.label13.TabIndex = 66;
+            this.label13.Text = "Eliminar";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(36, 71);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(39, 13);
+            this.label9.TabIndex = 65;
+            this.label9.Text = "Nuevo";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(116, 71);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 13);
+            this.label8.TabIndex = 64;
+            this.label8.Text = "Guardar";
+            // 
+            // rAsignatura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CerrarButton);
-            this.Controls.Add(this.Eliminarbutton);
-            this.Controls.Add(this.Guardarbutton);
-            this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.DescripciontextBox);
             this.Controls.Add(this.IdnumericUpDown);
@@ -196,11 +245,13 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "rAsignatura1";
+            this.Name = "rAsignatura";
             this.Text = "rAsignatura1";
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreditonumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,5 +272,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ErrorProvider ErrorProvider;
         private System.Windows.Forms.Label CerrarButton;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
     }
 }
