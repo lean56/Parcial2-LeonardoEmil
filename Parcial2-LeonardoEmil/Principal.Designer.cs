@@ -36,6 +36,7 @@
             this.Max = new System.Windows.Forms.PictureBox();
             this.Salir = new System.Windows.Forms.PictureBox();
             this.HideButton = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.cEstudiantesbutton = new System.Windows.Forms.Button();
             this.ConsultaAbutton = new System.Windows.Forms.Button();
             this.RegistroAsignatura = new System.Windows.Forms.Button();
@@ -53,6 +54,7 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.MenuVertical.Controls.Add(this.button1);
             this.MenuVertical.Controls.Add(this.cEstudiantesbutton);
             this.MenuVertical.Controls.Add(this.ConsultaAbutton);
             this.MenuVertical.Controls.Add(this.RegistroAsignatura);
@@ -147,6 +149,24 @@
             this.HideButton.TabIndex = 0;
             this.HideButton.TabStop = false;
             this.HideButton.Click += new System.EventHandler(this.HideButton_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Image = global::Parcial2_LeonardoEmil.Properties.Resources.inscripcionsearch;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(6, 469);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(164, 47);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Consulta Inscripcion";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // cEstudiantesbutton
             // 
@@ -277,5 +297,6 @@
         public System.Windows.Forms.Panel PanelContenedor;
         private System.Windows.Forms.Button ConsultaAbutton;
         private System.Windows.Forms.Button cEstudiantesbutton;
+        private System.Windows.Forms.Button button1;
     }
 }

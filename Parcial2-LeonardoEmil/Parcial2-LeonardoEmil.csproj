@@ -81,6 +81,12 @@
     <Compile Include="UI\Consultas\cEstudiantes.Designer.cs">
       <DependentUpon>cEstudiantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Consultas\cInscripciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cInscripciones.Designer.cs">
+      <DependentUpon>cInscripciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registro\rAsignatura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\cEstudiantes.resx">
       <DependentUpon>cEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\CInscripciones.resx">
+      <DependentUpon>cInscripciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registro\rAsignatura.resx">
       <DependentUpon>rAsignatura.cs</DependentUpon>
@@ -230,6 +239,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\action_exit_close_remove_13915.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inscripcionsearch.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

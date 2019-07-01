@@ -26,7 +26,7 @@ namespace Parcial2_LeonardoEmil.UI.Consultas
 
             if (FiltroComboBox.Text == string.Empty)
             {
-                MyErrorProvider.SetError(FiltroComboBox, "No ha selecionado ningun filtro");
+                MyErrorProvider.SetError(FiltroComboBox, "No a selecionado ningun filtro");
                 FiltroComboBox.Focus();
                 paso = false;
             }

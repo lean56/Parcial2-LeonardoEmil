@@ -121,6 +121,9 @@
   <data name="searchmagnifierinterfacesymbol1_798932" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\searchmagnifierinterfacesymbol1_798932.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="action_exit_close_remove_13915" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\action_exit_close_remove_13915.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon maximizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon maximizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -205,7 +208,7 @@
   <data name="preview_search_find_locate_1551" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\preview_search_find_locate_1551.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="action_exit_close_remove_13915" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\action_exit_close_remove_13915.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="inscripcionsearch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inscripcionsearch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

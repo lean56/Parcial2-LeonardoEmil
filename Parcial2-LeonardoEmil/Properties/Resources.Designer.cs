@@ -203,6 +203,16 @@ namespace Parcial2_LeonardoEmil.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap inscripcionsearch {
+            get {
+                object obj = ResourceManager.GetObject("inscripcionsearch", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap magnifier_1_icon_icons_com_56924 {
             get {
                 object obj = ResourceManager.GetObject("magnifier-1_icon-icons.com_56924", resourceCulture);
