@@ -27,12 +27,12 @@ namespace Parcial2_LeonardoEmil
 
         private void HideButton_Click(object sender, EventArgs e)
         {
-            if (MenuVertical.Width == 200)
+            if (MenuVertical.Width == 180)
             {
-                MenuVertical.Width = 50;
+                MenuVertical.Width = 60;
             }
             else
-                MenuVertical.Width = 200;
+                MenuVertical.Width = 180;
         }
 
         private void min_Click(object sender, EventArgs e)
