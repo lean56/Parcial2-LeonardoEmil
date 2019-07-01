@@ -152,31 +152,34 @@
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Location = new System.Drawing.Point(440, 490);
+            this.Eliminarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Eliminarbutton.Image = global::Parcial2_LeonardoEmil.Properties.Resources.action_exit_close_remove_13915;
+            this.Eliminarbutton.Location = new System.Drawing.Point(440, 474);
             this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Eliminarbutton.Size = new System.Drawing.Size(75, 54);
             this.Eliminarbutton.TabIndex = 39;
-            this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.UseVisualStyleBackColor = true;
             this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(347, 490);
+            this.Guardarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Guardarbutton.Image = global::Parcial2_LeonardoEmil.Properties.Resources.save_21411;
+            this.Guardarbutton.Location = new System.Drawing.Point(347, 474);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Guardarbutton.Size = new System.Drawing.Size(75, 54);
             this.Guardarbutton.TabIndex = 38;
-            this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.UseVisualStyleBackColor = true;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.Location = new System.Drawing.Point(257, 490);
+            this.Nuevobutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Nuevobutton.Image = global::Parcial2_LeonardoEmil.Properties.Resources.file_new_22051;
+            this.Nuevobutton.Location = new System.Drawing.Point(257, 474);
             this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(75, 23);
+            this.Nuevobutton.Size = new System.Drawing.Size(75, 54);
             this.Nuevobutton.TabIndex = 37;
-            this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.UseVisualStyleBackColor = true;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
