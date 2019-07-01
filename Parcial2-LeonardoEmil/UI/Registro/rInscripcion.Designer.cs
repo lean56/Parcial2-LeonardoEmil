@@ -293,7 +293,7 @@
             // BuscarAsignbutton
             // 
             this.BuscarAsignbutton.Image = global::Parcial2_LeonardoEmil.Properties.Resources.searchmagnifierinterfacesymbol1_798931;
-            this.BuscarAsignbutton.Location = new System.Drawing.Point(94, 21);
+            this.BuscarAsignbutton.Location = new System.Drawing.Point(98, 21);
             this.BuscarAsignbutton.Name = "BuscarAsignbutton";
             this.BuscarAsignbutton.Size = new System.Drawing.Size(27, 25);
             this.BuscarAsignbutton.TabIndex = 51;
@@ -345,7 +345,7 @@
             this.Removerbutton.Text = "- Remover Fila";
             this.Removerbutton.Click += new System.EventHandler(this.Removerbutton_Click);
             // 
-            // rInscripcion1
+            // rInscripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -370,7 +370,7 @@
             this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "rInscripcion1";
+            this.Name = "rInscripcion";
             this.Text = "rInscripcion1";
             ((System.ComponentModel.ISupportInitialize)(this.IdAsignumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IdEstudiantenumericUpDown)).EndInit();

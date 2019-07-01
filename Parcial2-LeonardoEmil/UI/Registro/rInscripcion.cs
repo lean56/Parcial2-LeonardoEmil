@@ -33,6 +33,7 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             PrecionumericUpDown.Value = 0;
             TotaltextBox.Text = "0.00";
             detalle = new List<InscripcionDetalle>();
+            DetalledataGridView.DataSource = null;
             ErrorProvider.Clear();
         }
 
@@ -304,13 +305,21 @@ namespace Parcial2_LeonardoEmil.UI.Registro
             RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
 
             Asignaturas asignaturas = BuscarAsignatura((int)IdAsignumericUpDown.Value);
-            this.detalle.Add(
-          new InscripcionDetalle(
-              inscripcionDetalleId: 0,
-              inscripcionId: (int)IdnumericUpDown.Value,
-              asignaturaId: asignaturas.AsignaturaId,
-              subTotal: (asignaturas.Creditos * PrecionumericUpDown.Value)
-              ));
+            if (PrecionumericUpDown.Value ==0)
+            {
+                ErrorProvider.SetError(PrecionumericUpDown, "El Precio no puede ser cero");
+            }
+            else
+            {
+                ErrorProvider.Clear();
+                this.detalle.Add(
+              new InscripcionDetalle(
+                  inscripcionDetalleId: 0,
+                  inscripcionId: (int)IdnumericUpDown.Value,
+                  asignaturaId: asignaturas.AsignaturaId,
+                  subTotal: (asignaturas.Creditos * PrecionumericUpDown.Value)
+                  ));
+            }
             CargarGrid();
             InscripcionDetalle inscripcionD = new InscripcionDetalle();
             TotaltextBox.Text = inscripcionD.SubTotal.ToString();

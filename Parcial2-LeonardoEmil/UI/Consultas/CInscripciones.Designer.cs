@@ -66,9 +66,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.cAsignaturadataGridView);
-            this.groupBox2.Location = new System.Drawing.Point(154, 241);
+            this.groupBox2.Location = new System.Drawing.Point(154, 223);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(529, 180);
+            this.groupBox2.Size = new System.Drawing.Size(571, 180);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             // 
@@ -77,7 +77,7 @@
             this.cAsignaturadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.cAsignaturadataGridView.Location = new System.Drawing.Point(14, 19);
             this.cAsignaturadataGridView.Name = "cAsignaturadataGridView";
-            this.cAsignaturadataGridView.Size = new System.Drawing.Size(500, 155);
+            this.cAsignaturadataGridView.Size = new System.Drawing.Size(544, 155);
             this.cAsignaturadataGridView.TabIndex = 8;
             // 
             // groupBox1
@@ -97,14 +97,14 @@
             this.groupBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.groupBox1.Location = new System.Drawing.Point(154, 108);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(529, 116);
+            this.groupBox1.Size = new System.Drawing.Size(571, 98);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             // 
             // HastadateTimePicker
             // 
             this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.HastadateTimePicker.Location = new System.Drawing.Point(226, 75);
+            this.HastadateTimePicker.Location = new System.Drawing.Point(113, 39);
             this.HastadateTimePicker.Name = "HastadateTimePicker";
             this.HastadateTimePicker.Size = new System.Drawing.Size(96, 20);
             this.HastadateTimePicker.TabIndex = 19;
@@ -112,7 +112,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(185, 78);
+            this.label4.Location = new System.Drawing.Point(116, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 21;
@@ -121,7 +121,7 @@
             // DesdedateTimePicker
             // 
             this.DesdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DesdedateTimePicker.Location = new System.Drawing.Point(56, 78);
+            this.DesdedateTimePicker.Location = new System.Drawing.Point(9, 39);
             this.DesdedateTimePicker.Name = "DesdedateTimePicker";
             this.DesdedateTimePicker.Size = new System.Drawing.Size(98, 20);
             this.DesdedateTimePicker.TabIndex = 18;
@@ -136,15 +136,15 @@
             "Id Estudiante",
             "Id Asignatura",
             "Monto"});
-            this.FiltroComboBox.Location = new System.Drawing.Point(14, 41);
+            this.FiltroComboBox.Location = new System.Drawing.Point(215, 38);
             this.FiltroComboBox.Name = "FiltroComboBox";
-            this.FiltroComboBox.Size = new System.Drawing.Size(121, 21);
+            this.FiltroComboBox.Size = new System.Drawing.Size(103, 21);
             this.FiltroComboBox.TabIndex = 21;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 78);
+            this.label3.Location = new System.Drawing.Point(6, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 20;
@@ -153,7 +153,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(421, 81);
+            this.label5.Location = new System.Drawing.Point(503, 80);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 13);
             this.label5.TabIndex = 20;
@@ -161,15 +161,15 @@
             // 
             // CristerioTextBox
             // 
-            this.CristerioTextBox.Location = new System.Drawing.Point(188, 42);
+            this.CristerioTextBox.Location = new System.Drawing.Point(335, 39);
             this.CristerioTextBox.Name = "CristerioTextBox";
-            this.CristerioTextBox.Size = new System.Drawing.Size(181, 20);
+            this.CristerioTextBox.Size = new System.Drawing.Size(156, 20);
             this.CristerioTextBox.TabIndex = 19;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(185, 16);
+            this.label6.Location = new System.Drawing.Point(330, 16);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(39, 13);
             this.label6.TabIndex = 12;
@@ -178,7 +178,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 16);
+            this.label7.Location = new System.Drawing.Point(212, 16);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 13);
             this.label7.TabIndex = 11;
@@ -191,7 +191,7 @@
             // ConsultaUserbutton
             // 
             this.ConsultaUserbutton.Image = global::Parcial2_LeonardoEmil.Properties.Resources.search_locate_find_icon_icons_com_67287__1_;
-            this.ConsultaUserbutton.Location = new System.Drawing.Point(419, 25);
+            this.ConsultaUserbutton.Location = new System.Drawing.Point(497, 24);
             this.ConsultaUserbutton.Name = "ConsultaUserbutton";
             this.ConsultaUserbutton.Size = new System.Drawing.Size(61, 53);
             this.ConsultaUserbutton.TabIndex = 15;
