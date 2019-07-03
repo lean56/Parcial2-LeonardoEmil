@@ -40,11 +40,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.CristerioTextBox = new System.Windows.Forms.TextBox();
-            this.ConsultaUserbutton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Imprimirbutton = new System.Windows.Forms.Button();
+            this.ConsultaUserbutton = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cAsignaturadataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -167,16 +167,6 @@
             this.CristerioTextBox.Size = new System.Drawing.Size(156, 20);
             this.CristerioTextBox.TabIndex = 19;
             // 
-            // ConsultaUserbutton
-            // 
-            this.ConsultaUserbutton.Image = global::Parcial2_LeonardoEmil.Properties.Resources.search_locate_find_icon_icons_com_67287__1_;
-            this.ConsultaUserbutton.Location = new System.Drawing.Point(497, 24);
-            this.ConsultaUserbutton.Name = "ConsultaUserbutton";
-            this.ConsultaUserbutton.Size = new System.Drawing.Size(61, 53);
-            this.ConsultaUserbutton.TabIndex = 15;
-            this.ConsultaUserbutton.UseVisualStyleBackColor = true;
-            this.ConsultaUserbutton.Click += new System.EventHandler(this.ConsultaUserbutton_Click);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -201,20 +191,32 @@
             // 
             // Imprimirbutton
             // 
-            this.Imprimirbutton.Location = new System.Drawing.Point(630, 409);
+            this.Imprimirbutton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.Imprimirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Imprimirbutton.Image = global::Parcial2_LeonardoEmil.Properties.Resources.printer_78349;
+            this.Imprimirbutton.Location = new System.Drawing.Point(630, 403);
             this.Imprimirbutton.Name = "Imprimirbutton";
-            this.Imprimirbutton.Size = new System.Drawing.Size(75, 23);
+            this.Imprimirbutton.Size = new System.Drawing.Size(75, 61);
             this.Imprimirbutton.TabIndex = 20;
-            this.Imprimirbutton.Text = "Imprimir";
             this.Imprimirbutton.UseVisualStyleBackColor = true;
             this.Imprimirbutton.Visible = false;
             this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
+            // 
+            // ConsultaUserbutton
+            // 
+            this.ConsultaUserbutton.Image = global::Parcial2_LeonardoEmil.Properties.Resources.search_locate_find_icon_icons_com_67287__1_;
+            this.ConsultaUserbutton.Location = new System.Drawing.Point(497, 24);
+            this.ConsultaUserbutton.Name = "ConsultaUserbutton";
+            this.ConsultaUserbutton.Size = new System.Drawing.Size(61, 53);
+            this.ConsultaUserbutton.TabIndex = 15;
+            this.ConsultaUserbutton.UseVisualStyleBackColor = true;
+            this.ConsultaUserbutton.Click += new System.EventHandler(this.ConsultaUserbutton_Click);
             // 
             // cInscripciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(805, 476);
             this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
