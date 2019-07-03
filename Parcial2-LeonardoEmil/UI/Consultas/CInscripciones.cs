@@ -1,5 +1,6 @@
 ﻿using Parcial2_LeonardoEmil.BLL;
 using Parcial2_LeonardoEmil.Entidades;
+using Parcial2_LeonardoEmil.UI.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,8 @@ namespace Parcial2_LeonardoEmil.UI.Consultas
 {
     public partial class cInscripciones : Form
     {
+        private List<Inscripciones> listaInscripcion;
+
         public cInscripciones()
         {
             InitializeComponent();
@@ -55,6 +58,7 @@ namespace Parcial2_LeonardoEmil.UI.Consultas
                 {
                     case 0://Todo: todo
                         listado = repositorioI.GetList(p => true);
+                        Imprimirbutton.Visible = true;
                         break;
                     case 1: //Todo: ID Inscripcion
                         if (CristerioTextBox.Text.Any(x => !char.IsNumber(x)))
@@ -65,6 +69,7 @@ namespace Parcial2_LeonardoEmil.UI.Consultas
                         {
                             int id = Convert.ToInt32(CristerioTextBox.Text);
                             listado = repositorioI.GetList(p => p.InscripcionId == id);
+                            Imprimirbutton.Visible = true;
                         }
                         break;
                     case 2://Todo: Id Estudiante
@@ -76,6 +81,7 @@ namespace Parcial2_LeonardoEmil.UI.Consultas
                         {
                             int Id = Convert.ToInt32(CristerioTextBox.Text);
                             listado = repositorioI.GetList(p => p.EstudianteId == Id);
+                            Imprimirbutton.Visible = true;
                         }
                         break;
                     case 3://Todo: IdAsignatura
@@ -87,6 +93,7 @@ namespace Parcial2_LeonardoEmil.UI.Consultas
                         {
                             int ID = Convert.ToInt32(CristerioTextBox.Text);
                             listado = repositorioI.GetList(p => p.AsignaturaId == ID);
+                            Imprimirbutton.Visible = true;
                         }
                         break;
                     case 4://Todo: Monto
@@ -98,6 +105,7 @@ namespace Parcial2_LeonardoEmil.UI.Consultas
                         {
                             int Monto = Convert.ToInt32(CristerioTextBox.Text);
                             listado = repositorioI.GetList(p => p.Monto == Monto);
+                            Imprimirbutton.Visible = true;
                         }
                         break;
                 }
@@ -107,9 +115,23 @@ namespace Parcial2_LeonardoEmil.UI.Consultas
             {
                 listado = repositorioI.GetList(p => true);
             }
-
             cAsignaturadataGridView.DataSource = null;
+            listaInscripcion = repositorioI.GetList(p => true);
             cAsignaturadataGridView.DataSource = listado;
+        }
+
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            if(listaInscripcion.Count ==0)
+            {
+                MessageBox.Show("No Hay Datos para imprimir");
+                return;
+            }
+            else
+            {
+                rptInscripcion rpti = new rptInscripcion(listaInscripcion);
+                rpti.ShowDialog();
+            }
         }
     }
 }
